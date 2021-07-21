@@ -14,12 +14,29 @@ var account=function(amount)
   {
       console.log("\ncredited :"+amount);
       balance=balance+amount;
+      monitor();  //monitoring credit ooperation
   };
 
   var deductamount=function(amount)
   {
       console.log("\ndeducted :"+amount);
       balance=balance-amount;
+       monitor(); //monitoring debit ooperation
+  };
+
+
+//creating a monitor which will monitor each transaction 
+//and will perform some operation if some situation occurs as per given conditions
+  var monitor=function()
+  {
+      if (balance<500)
+      {
+          console.log("Insuficient balance:Cannot proceed further")
+      }
+      else if(balance>250000)
+      {
+          console.log("Over Balance:tax will be applied")
+      }
   };
 
    //we cannot use these inner functions outside acount function directly 
@@ -27,7 +44,7 @@ var account=function(amount)
    //by calling new function we will indirectly call to these inner functions
    //publishing getBalance, creditamount creditamount functions outside with a name 
    //this name to be used outside the parent function:Account(), to call the inner function
-   
+
   return {
     //outside name : inside name
       currentBalance:getBalance,
@@ -46,15 +63,18 @@ var bal=account1.currentBalance();
 console.log("Balance is: "+bal);  
 
 //applying credit operation using creditamount functions:
-var newamount=5000;
+var newamount=305000;
 account1.creditamount(newamount);
 //showing current balance after operation
  bal=account1.currentBalance();
 console.log("Balance is: "+bal);  
 
+
 //applying debit operation using debitamount functions:
-var newamount=10000;
+var newamount=349900;
 account1.debitamount(newamount);
 //showing current balance after operation
  bal=account1.currentBalance();
 console.log("Balance is: "+bal);  
+
+
