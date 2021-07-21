@@ -1,7 +1,7 @@
 //first step is to install node js
 
 //getting started with node js
-//first code to display hello dear
+//first code to display hello dear using java script
 console.log("hello web tech family");
 
 //using a string variable to display a string
