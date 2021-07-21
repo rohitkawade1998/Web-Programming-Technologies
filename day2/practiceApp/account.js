@@ -22,7 +22,12 @@ var account=function(amount)
       balance=balance-amount;
   };
 
-   //publishing getBalance outside with same name
+   //we cannot use these inner functions outside acount function directly 
+   //so we need to map this inner function to a diffrent function name 
+   //by calling new function we will indirectly call to these inner functions
+   //publishing getBalance, creditamount creditamount functions outside with a name 
+   //this name to be used outside the parent function:Account(), to call the inner function
+   
   return {
     //outside name : inside name
       currentBalance:getBalance,
