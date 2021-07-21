@@ -6,10 +6,10 @@
 
 exports.payIncometax=function()
 {
-    console.log("20% income tax to be applied");
+    console.log("29% income tax to be applied");
 }
 
 exports.blockAccount=function()
 {
-    console.log("Blocking Account Temporarily !!!");
+    console.log("Blocking Account Temporarilyyy !!!");
 }
