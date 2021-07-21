@@ -90,10 +90,14 @@ var account=function(amount)
  
 //events are always associated with instances(objects)
 //step1: Configuration and initialisation of events
-//register Eventhandlers with event using emitter object
+//registering Eventhandlers with event using emitter object
 
 emitterr.on("underBalance",handlers.blockAccount);
-//if underBalance event raised call blockaccount function from handler file
+emitterr.on("underBalance",handlers.sendEmail);
+emitterr.on("underBalance",handlers.sendSms);
+//if underBalance event raised call blockaccount,sendEmail and sendSms functions
+//automatically from handler file
+//one event raised can have multiple event listeners
 
 emitterr.on("overBalance",handlers.payIncometax);
 //if overBalance event raised call payIncometax function from handler file
@@ -102,6 +106,7 @@ emitterr.on("overBalance",handlers.payIncometax);
 //creating the object of the function account
 var account1=new account(45000);
 
+//step3 : invoking functions
 //making a bal variable and storing balance inside it using getBalance function
 var bal=account1.currentBalance();
 console.log("Balance is: "+bal);  
