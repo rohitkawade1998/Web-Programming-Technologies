@@ -5,8 +5,12 @@ var http=require("http"); //using http inbuilt module,storing ref to http variab
 //so we will create a handler function and pass its name as argument to createserver function
 var onRequestHandler=function(request,response)
 {
-    response.write("hey friend, iam Server:ROHIT here..."); //we will get this at browser as response
-  
+   //sending a text response to browser:
+    //response.write("hey friend, iam Server:ROHIT here...\n"); //we will get this at browser as response
+
+    //sending a html response to browser:
+    response.write("<h1>responding in html</h1>");
+   console.log("Request is received.");
     response.end(); //once response is written then end this package by using end();
 };
 
