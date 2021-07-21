@@ -6,7 +6,16 @@
 //Rule: Constraints,Policy
 
 //declaring a variable for handlers
+//so that we can call functions of handler class by using this variable
 var handlers=require("./handler");
+
+//declaring a eventtt variable to get reference of events module
+var eventtt=require("events"); //builtin module: events , of node js
+
+//now using above variable we will use a inbuilt class: 'EventEmitter()' present under 'events' module
+//store its reference to emitterr variable
+var emitterr=new eventtt.EventEmitter();
+
 //variable declared bcaz we cannot call the outside functions directly
 //handlers is a variable that will be used to call the handler functions from handler file
 //require behaves like importing
@@ -48,13 +57,17 @@ var account=function(amount)
       {
          // console.log("Insuficient balance:Cannot proceed further");
 
-          handlers.blockAccount();         
+          //handlers.blockAccount();   
+          //rather that calling above fuction we will emit trigger events underbalance   
+            emitterr.emit("underBalance");
       }
       else if(balance>250000)
       {
           //console.log("Over Balance:tax will be applied");
          
-          handlers.payIncometax();
+          //handlers.payIncometax();
+          //rather that calling above fuction we will emit trigger events overbalance
+           emitterr.emit("overBalance");
       }
   };
 
@@ -72,8 +85,20 @@ var account=function(amount)
 
       debitamount:deductamount
   }
-}
+};
 
+ 
+//events are always associated with instances(objects)
+//step1: Configuration and initialisation of events
+//register Eventhandlers with event using emitter object
+
+emitterr.on("underBalance",handlers.blockAccount);
+//if underBalance event raised call blockaccount function from handler file
+
+emitterr.on("overBalance",handlers.payIncometax);
+//if overBalance event raised call payIncometax function from handler file
+
+//step 2 : creating objects,
 //creating the object of the function account
 var account1=new account(45000);
 
