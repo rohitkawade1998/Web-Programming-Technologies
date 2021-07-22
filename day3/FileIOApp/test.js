@@ -7,7 +7,7 @@ var fs=require('fs');
 //reference given to fs variable
 
 //to read a file we will need its path so we will get the path inside a variable
-var filePath="./data/friends.txt";
+var filePath="../data/friends.txt";
 
 //defining callback function automatically call when the file is successfully read
 var onFileRead=function(err,data){
@@ -16,7 +16,14 @@ var onFileRead=function(err,data){
     //handling error
     if(err)
     {
-        console.log("something went wrong...!!!");
+        //printing simple custom error statement 
+        //console.log("something went wrong...!!!");
+
+
+        //exception handling using throw keyword
+        throw err;
+
+       //throw console.log(err);
     }
     else{
      console.log("reading data from file----");
