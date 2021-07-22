@@ -7,7 +7,7 @@ var fs=require('fs');
 //reference given to fs variable
 
 //to read a file we will need its path so we will get the path inside a variable
-var filePath="../data/friends.txt";
+var filePath="./data/friends.txt";
 
 //defining callback function automatically call when the file is successfully read
 var onFileRead=function(err,data){
@@ -35,3 +35,7 @@ var onFileRead=function(err,data){
 
 //using the inbuilt readFile function to read a file and perform operation on it.
 fs.readFile(filePath,onFileRead);
+
+console.log("Terminating Statement --------");
+//this gets printed very first :)
+//
