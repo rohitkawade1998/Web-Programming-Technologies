@@ -41,4 +41,4 @@ console.log("Server listening on port no. 8989");  //step4
 
 
 
-//url from the browser is: http://localhost:8989/home.html
+//url from the browser is: http://localhost:8989/index.html
