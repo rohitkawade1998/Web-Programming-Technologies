@@ -38,3 +38,7 @@ server.listen(8989);  //step3: Server listening on port no. 8989
 
 console.log("Server listening on port no. 8989");  //step4
 //launch the server from command prompt and display this msg on server side (cmd output)
+
+
+
+//url from the browser is: http://localhost:8989/home.html
