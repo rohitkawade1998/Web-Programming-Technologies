@@ -43,7 +43,7 @@ var onRequestHandler=function(request,response)
      //4.sending an array of json objects as response to browser:
      response.writeHead(200,{'Content-Type':"text/json"});
      response.write(JSON.stringify(Gang));
-   
+     
 
     response.end(); //once response is written then end this package by using end();
 };
