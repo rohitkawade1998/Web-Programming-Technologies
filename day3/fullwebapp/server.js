@@ -40,5 +40,5 @@ console.log("Server listening on port no. 8989");  //step4
 //launch the server from command prompt and display this msg on server side (cmd output)
 
 
-
+//index.html is our home page
 //url from the browser is: http://localhost:8989/index.html
