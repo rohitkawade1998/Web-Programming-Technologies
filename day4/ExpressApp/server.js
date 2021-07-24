@@ -11,6 +11,9 @@ var app=express();  ///set global object from framework
 // __dirname ---->  physical path : F:\webtech\day4\ExpressApp
                //   virtual path:  http://localhost:9000
 
+
+//for configuration of middleware 
+//for registration of http requests with their handlers
 var staticFolder=express.static(path.join(__dirname,"public"));
 
 //express framework configuration
