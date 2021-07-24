@@ -1,0 +1,20 @@
+{
+  "name": "transflowerstoreweb",
+  "version": "1.0.0",
+  "description": "This is Transflower online Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohitkawade1998/Web-Programming-Technologies.git"
+  },
+  "author": "Rohit Sanjay Kawade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohitkawade1998/Web-Programming-Technologies/issues"
+  },
+  "homepage": "https://github.com/rohitkawade1998/Web-Programming-Technologies#readme"
+}
