@@ -38,6 +38,18 @@ app.post("/login",(request,response)=>{
 
      //the request sent by user from browser side will contain the entered data in the request body so we will extract the body
     console.log(request.body);  //to extract details entered by client while filling the login form
+    
+    //all the data of the form posted by client will be refrenced to the variable user
+    var user=request.body;
+    //verifying the email and password and giving response message at the server side:
+    if(user.email=="rohitkawade@123"&&user.Password=="rohitcool")
+    {
+        console.log(" Valid user :)");
+    }
+    else
+    {
+        console.log("Invalid user :( !!!");
+    }
 
      //when the user will hit the login button then this msg will be showm at the server side
     console.log("login page is posted by client on browser side and Received at Server");
@@ -47,6 +59,17 @@ app.post("/login",(request,response)=>{
 app.post("/register",(request,response)=>{
     
     console.log(request.body);  //to extract details entered by client while filling the registration form
+
+    var user=request.body;
+    //verifying the password and confirm password and giving response message at the server side:
+    if(user.Password==user.CPassword)
+    {
+        console.log(" Registration Successfull :) ");
+    }
+    else
+    {
+        console.log(" Password does not match :( !!!");
+    };
 
     //when the user will hit the register button then this msg will be showm at the server side
     console.log("Register page is posted by client on browser side and Received at Server");
