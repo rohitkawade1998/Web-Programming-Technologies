@@ -1,0 +1,47 @@
+<!DOCTYPE htnl>
+    <html>
+        <head>
+            <Title>Dinamic Page</Title>
+
+             <!--linking javascript with this html file -->
+
+           
+        </head>
+
+        <body>
+
+            <h1>Change Data Page</h1>
+            <hr/>
+            
+            <!-- when button pressed, then call onMagicClick() function from scripts folder -->
+            <p>Press the following Button to see the content you entered in the box:</p>
+
+            <input id="content" type="text" value="Rohit Cool" />
+
+            <button onclick="onShowEntry()"> SHOW </button>
+            
+            <p id="para2"> Default Info:Rohit is Hero </p>
+
+            <!--using javascript with this html file -->
+            <script>
+            var onShowEntry=function(){
+                 //get the reference of the element of the text box
+                var contentElement=document.getElementById("content");
+
+                 //using reference store the content of text box into dataTextBox variable
+                var dataTextBox=contentElement.value;  
+
+               //get the reference of the element whose id is para2
+                var showElement=document.getElementById("para2");
+
+                //change the data of the element by the textbox data
+                showElement.innerHTML=dataTextBox;         
+            }
+            </script>
+
+
+
+            <a href="index.html">Home</a>   
+
+        </body>
+    </html>
