@@ -1,0 +1,35 @@
+<!DOCTYPE htnl>
+    <html>
+        <head>
+            <Title>Dinamic Page</Title>
+
+             <!--linking javascript with this html file -->
+
+           
+        </head>
+
+        <body>
+
+            <h1>Change Data Page</h1>
+            <hr/>
+            
+            <!-- when button pressed, then call onMagicClick() function from scripts folder -->
+            <p>Press the following Button to change the below Paragraph:</p>
+
+            <button onclick="onMagicClick()">Magic Button</button>
+            <p id="para1"> Before Click </p>
+
+            <!--using javascript with this html file -->
+            <script>
+            var onMagicClick=function(){
+                var element=document.getElementById("para1");
+                element.innerHTML="After Click";                
+            }
+            </script>
+
+
+
+           
+
+        </body>
+    </html>

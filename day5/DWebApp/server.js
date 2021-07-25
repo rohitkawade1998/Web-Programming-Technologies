@@ -1,10 +1,9 @@
 //node js simple dinamic web application 
 //when client will press a button on the web page he will get an alert message displayed on the web page.
+//when client will press the magic button then the below sentence will be changed
 
 var express=require('express'); //importing express module
 var path=require('path');   //importing path module
-
-//console.log("dirname:1"+__dirname); //just to see what path is under __dirname
 
 var app=express();  ///set global object from framework
 // global object app will contain HTTP server
