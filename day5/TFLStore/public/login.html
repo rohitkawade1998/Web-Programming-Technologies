@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Transflower Store</Title>
+    </head>
+    <body>
+     
+       <h1>Transflower Store</h1>
+        
+         <hr/>
+         <a href="/"> Home </a>|<a href="/about.html"> About </a>|<a href="/catalog.html"> Catalog </a>|<a href="/contact.html"> Contact </a>|<a href="/list.html"> List </a>|<a href="/login.html"> Login </a>|<a href="/register.html"> Register </a>
+         
+         <h2>Login :</h2>
+         
+         <form method="POST" action="/login">
+            <table>
+                <tr>
+                        <td><label>Email</label></td>
+                        <td><input id="email" type="email" name="email" required/></td>
+                </tr>
+
+                <tr>
+                        <td><label>Password</label></td>
+                        <td><input id="password" type="password" name="password" required/></td>
+                </tr>
+
+                <tr>
+                        <td></td>
+                        <td><button onclick="onLoginClick()" type="submit">Login</button></td>
+                </tr>
+             </table>
+             <p>If you are not registered yet, then first register Please</p>
+             <br/>
+             <p>Entries Entered by you are:</p>
+        
+             <p id="showEmail"> </p>
+             <p id="showPassword"></p>
+
+             <script>
+                    var onLoginClick=function() {
+
+                         //console.log("Entries are Displayed.");
+                         var emailElement=document.getElementById("email");
+                         var emailData=emailElement.value;
+
+                         var passwordElement=document.getElementById("password");
+                         var passwordData=passwordElement.value;
+
+                         //getting reference of element whose id is dataEmail
+                         var dataEmailElement=document.getElementById("showEmail");
+                         //overwriting emailData into showEmail
+                         dataEmailElement.innerHTML=emailData;
+
+                         //getting reference of element whose id is dataEmail
+                         var dataPasswordElement=document.getElementById("showPassword");
+                         //overwriting passwordData into showPassword
+                         dataPasswordElement.innerHTML=passwordData;
+                    }
+
+             </script>
+
+    </body>
+
+</html>

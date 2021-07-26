@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Transflower Store</Title>
+        <script src="/scripts/app.js"> </script>
+    </head>
+    <body>
+     
+       <h1>Transflower Store</h1>
+        
+         <hr/>
+         <a href="/"> Home </a>|<a href="/about.html"> About </a>|<a href="/catalog.html"> Catalog </a>|<a href="/contact.html"> Contact </a>|<a href="/list.html"> List </a>|<a href="/login.html"> Login </a>|<a href="/register.html"> Register </a>
+         <h2>Register :</h2>
+         <p>Please fill the below register form to get exclusive offers:</p>
+         <form method="POST" action="/register">
+            <table>
+                <tr>
+                        <td><label>Email</label></td>
+                        <td><input id="1" type="email" name="email" required/></td>
+                </tr>
+
+                <tr>
+                        <td><label>Password</label></td>
+                        <td><input id="2" type="password" name="password" required/></td>
+                </tr>
+
+                 <tr>
+                        <td><label>Confirm Password</label></td>
+                        <td><input id="3" type="password" name="cpassword" required/></td>
+                </tr>
+
+                 <tr>
+                        <td><label>Name</label></td>
+                        <td><input id="4" type="text" name="name" required/></td>
+                </tr>
+
+                 <tr>
+                        <td><label>DOB</label></td>
+                        <td><input id="5" type="date" name="dob" required/></td>
+                </tr>
+
+                 <tr>
+                        <td><label>Contact</label></td>
+                        <td><input id="6" type="text" name="contact" required/></td>
+                </tr>
+
+                <tr>
+                        
+                        <td></td>
+                        <td><button onclick="onRegisterClick()" type="submit">Register</button></td>
+                                               
+                </tr>
+             </table>
+
+             <p> </p>
+             <br/>
+
+             <p id="r1"> </p>
+             <p id="r2"> </p>
+             <p id="r3"> </p>
+             <p id="r4"> </p>
+             <p id="r5"> </p>
+             <p id="r6"> </p>
+              
+    </body>
+</html>
