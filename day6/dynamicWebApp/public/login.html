@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    
+     <head>
+        <title>Wow Website</title>
+     </head>
+
+     <body>
+
+     <h1>Welcome to the Login Page</h1>
+
+     <br/>
+
+     <a href="/event.html">Event Page</a> | <a href="/paintbrush.html">Canvas PaintBrush Page</a> | <a href="/svg.html">SVG Page</a> | <a href="/storage.html">Storage Page</a> | <a href="/register.html">Register Page</a> | <a href="/login.html">Login Page</a>
+     
+     <br/>
+    
+     <h3>Enter Credentials to Login</h3>
+
+     <p>Only registered candidate are allowed,</p>
+     <br/>
+     <table>
+            <tr> 
+            <td>Username:</td>
+            <td ><input id="idloginusername" type="text" name="entryloginusername" /></td>
+            </tr>
+
+            <tr> 
+            <td>Password:</td>
+            <td ><input id="idloginpassword" type="password" name="entryloginpassword" /></td>
+            </tr>
+
+            <tr> 
+            <td></td>
+            <td ><button onclick="onLoginClick()" id="idloginbutton" >Login</button></td>
+            </tr>
+
+     </table>
+     <div id="result" ></div>
+
+     <br/>
+     <h4>if not registered then first register yourself,</h4>
+
+     <a href="/register.html">Register Page</a>
+ 
+     <script>
+   
+     function onLoginClick()
+     {
+         var usernameElement=document.getElementById("idloginusername");
+         var passwordElement=document.getElementById("idloginpassword");
+         var resultElement=document.getElementById("result");
+
+         if(typeof(Storage)!==undefined)
+             {
+                 //retrieving credentials from browser local storage, stored at the time of registration:
+                 var storedRegisCredentials=localStorage.getItem("register");
+                 //"register" is the key of data at the time of registering and storing to local browser
+                 var jsonRegister=JSON.parse(storedRegisCredentials);
+
+                 if(usernameElement.value==jsonRegister.username && passwordElement.value==jsonRegister.password)
+                   {
+                      resultElement.innerHTML="Valid User :)";
+                   }
+                   else
+                   {
+                      resultElement.innerHTML="Invalid User :(";
+                   };
+             }             
+         else{
+
+                 resultElement.innerHTML="Sorry !!!Your Browser Does Not Support Local Browser Storage feature";
+
+             };
+     }
+
+
+    </script>
+    
+</body>
+
+</html>
