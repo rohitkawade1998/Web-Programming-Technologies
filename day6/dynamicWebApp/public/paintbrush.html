@@ -10,10 +10,12 @@
      </canvas>
 
      <script>
-        function drawline(){
-            
+        function drawLine(){
+
             //by this it will create a plus on the canvas
             var canvasElement=document.getElementById("canvas");
+
+             if (canvasElement.getContext){
             var context=canvasElement.getContext("2d");
             context.moveTo(150,100);
             context.lineTo(150,200);
@@ -22,8 +24,77 @@
             context.moveTo(100,150);
             context.lineTo(200,150);            
             context.stroke();
+             }
         };
-        drawline();
+
+        function drawRectangle(){
+
+            //by this it will create a plus on the canvas
+            var canvasElement=document.getElementById("canvas");
+
+             if (canvasElement.getContext){
+            var context=canvasElement.getContext("2d");
+            
+            
+            context.fillStyle = "red";
+            context.fillRect(50,50,200,150);
+            context.strokeStyle = "black";
+            
+            context.strokeRect(50,50,200,150);   
+             }   
+               
+        };
+
+        function drawTriangle(){
+             var canvasElement=document.getElementById("canvas");
+
+            //by this it will create a triangle on the canvas
+            if (canvasElement.getContext)
+             {
+                
+                 var context=canvasElement.getContext("2d");
+                 context.beginPath();
+                 context.moveTo(30,105);
+                 context.lineTo(190,105);
+                 context.lineTo(105,35);
+                 context.fillStyle = "blue";
+                 context.fill();
+
+                 context.fillStyle = "black";
+                 context.stroke();
+                     
+             }  
+               
+        };
+
+        function drawCircle(){
+             var canvasElement=document.getElementById("canvas");
+
+            //by this it will create a triangle on the canvas
+            if (canvasElement.getContext)
+             {
+                
+                 var context=canvasElement.getContext("2d");
+                 context.beginPath();
+                 context.arc(150,150,55,0,2*Math.PI);
+               
+                 context.fillStyle = "blue";
+                 context.fill();
+
+                 context.fillStyle = "black";
+                 
+                 context.stroke();
+                
+                     
+             }  
+               
+        };
+
+
+         drawLine();
+         //drawRectangle();
+         //drawTriangle();
+         //drawCircle();
      </script>
 
      </body>
