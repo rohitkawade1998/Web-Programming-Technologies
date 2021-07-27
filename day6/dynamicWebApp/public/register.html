@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wow Website</title>
+    </head>
+    <body>
+    <h1> Welcome to Register Page: </h1>
+    <br/>
+    <p>Enter data to Register:</p>
+    <br/>
+        
+        <label>User Name: </label><input id="idusername" type="text" name="entryusername" required/>
+        <br/>
+        <label>Password:   </label><input id="idpassword" type="password" name="entrypassword" required/>
+        <br/>
+
+        <button onclick="registerData()">Register</button>
+        <br/>
+        <br/>
+        <div id="result"></div>
+
+        <script>
+                function registerData()
+                {
+                     //getting the text box element
+                      var usernameElement=document.getElementById("idusername");
+                      var passwordElement=document.getElementById("idpassword");
+                      var resultElement=document.getElementById("result");
+                      if(typeof(Storage)!=="undefined")
+                        {                      
+
+                           //getting the text box dat6a
+                           var usernameData=usernameElement.value;
+                           var passwordData=passwordElement.value;
+
+                           var registerCredentials={
+                             "username":usernameData,
+                              "password":passwordData
+                             }
+
+                           //storing this data into local storage
+                           localStorage.setItem("register",JSON.stringify(registerCredentials));
+
+                           //showing result 
+                           resultElement.innerHTML="Successfully Stored :)";                     
+
+                        }
+                        else{    
+
+                          //showing result 
+                          resultElement.innerHTML="Cannot Store :Your Browser DoesNot Support HTML5 Feature:WebStorage";
+
+                         }
+
+                }
+
+        </script>
+        
+    </body>
+
+</html
