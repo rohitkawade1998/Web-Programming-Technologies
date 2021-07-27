@@ -1,0 +1,30 @@
+<!--3.Add new paintbrush file -->
+<!-- to draw Graphics shaped line, rectangle, circle, filled using canvas.-->
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Wow Website</title>
+     </head>
+     <body>
+     <canvas id="canvas" width="300" height="300" style="background-color:aquamarine;">
+     </canvas>
+
+     <script>
+        function drawline(){
+            
+            //by this it will create a plus on the canvas
+            var canvasElement=document.getElementById("canvas");
+            var context=canvasElement.getContext("2d");
+            context.moveTo(150,100);
+            context.lineTo(150,200);
+            context.stroke();
+
+            context.moveTo(100,150);
+            context.lineTo(200,150);            
+            context.stroke();
+        };
+        drawline();
+     </script>
+
+     </body>
+</html>
