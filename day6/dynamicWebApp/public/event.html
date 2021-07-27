@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Wow Website</title>
+     </head>
+         <body>
+
+         <button id="myBtn">Press Me !</button>
+         <p id="demo"></p>
+        
+         <script>
+         
+            var buttonElement=document.getElementById("myBtn");
+
+            var dispData=document.getElementById("demo");
+
+            //create event listeners for Mouse:
+            document.addEventListener("mousedown",onMouseDown);
+         
+            document.addEventListener("mouseup",onMouseUp);
+
+            buttonElement.addEventListener("click",onButtonClick)
+ 
+            buttonElement.addEventListener("mouseover",onMouseOver)
+
+            document.addEventListener("mouseout",onMouseOut)
+           
+
+            
+            //call back Functions:
+            function onMouseDown(){
+               dispData.innerHTML="Mouse Clicked";
+           }
+
+            function onMouseOut(){
+              dispData.innerHTML="Mouse Not Over Button";
+           }
+
+            function onMouseUp(){
+               dispData.innerHTML="Mouse Unclicked";
+           }
+
+            function onButtonClick(){
+               dispData.innerHTML="Button clicked";
+           }
+
+            function onMouseOver(){
+               dispData.innerHTML="Mouse Over Button";
+           }                      
+           
+            //create event listeners for Keyboard:
+            document.addEventListener("keydown",onKeyDown);
+
+            function onKeyDown(){
+               dispData.innerHTML="Presses a Key";
+           }   
+
+         </script>
+
+     </body>
+
+</html
