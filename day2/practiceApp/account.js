@@ -26,7 +26,7 @@ var emitterr=new eventtt.EventEmitter();
 
 var account=function(amount)
 {
-    console.log("--Welcome to you Bank--")
+    console.log("\n--Welcome to you Bank--\n")
   var balance=amount;
   var getBalance=function()
   {

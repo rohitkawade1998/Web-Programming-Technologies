@@ -26,7 +26,7 @@ var onFileRead=function(err,data){
        //throw console.log(err);
     }
     else{
-     console.log("reading data from file----");
+     console.log("\n---reading data from file----\n");
      console.log(data.toString());//showing contents on output
      //converting data to string using toString function
     }
@@ -36,6 +36,6 @@ var onFileRead=function(err,data){
 //using the inbuilt readFile function to read a file and perform operation on it.
 fs.readFile(filePath,onFileRead);
 
-console.log("Terminating Statement --------");
+//console.log("\n----Terminating Statement --------\n");
 //this gets printed very first :)
 //

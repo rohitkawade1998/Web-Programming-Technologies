@@ -8,7 +8,7 @@
 var filePath="./data/trial.txt";
 
 //step 3:store the data to be written in a variable named:writeThis
- var writeThis="This is written by Rohit from write.js file";
+ var writeThis="\n This is written by Rohit from write.js file \n";
 
  //step 5:define the call back function()
  //this will be called automatically after successfull writing on the corresponding file
@@ -18,7 +18,7 @@ var filePath="./data/trial.txt";
      {
          console.log("error present !!!!")
      } //if no error then print below message
-     console.log("Write operation success on the file :)");
+     console.log("\n Write operation success on the file :) \n");
  };
 
 //step 4: calling the writeFile inbuilt function of fs module

@@ -2,10 +2,10 @@
 
 //getting started with node js
 //first code to display hello dear using java script
-console.log("hello web tech family");
+console.log("\nhello web tech family\n");
 
 //using a string variable to display a string
-var disp="welcome to web tech";
+var disp="welcome to web tech\n";
 //using a variable to display a count
 var count=1169;
 
