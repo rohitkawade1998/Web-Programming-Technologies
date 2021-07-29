@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+//tested the app.get,app.post using POSTMAN application
+//it allows us to test our backend functions without developing the frontend(html files)
 
 app.get("/",(req,res)=>{
     res.sendFile(staticMiddleware+'/index.html');
@@ -102,7 +104,7 @@ app.post("/api/login",(request,response)=>{
  });
 
 app.post("/api/register",(request,response)=>{
-    
+
      //extracting client's entered registration data
      var newuser=request.body;
      
@@ -112,6 +114,7 @@ app.post("/api/register",(request,response)=>{
      response.send("Customer Registration Successfull");
 });
 
+//to add a flower object inside flowers array whatever data client will give.
 app.post("/api/flower",(request,response)=>{
 
      //extracting client's entered flower data
@@ -123,6 +126,22 @@ app.post("/api/flower",(request,response)=>{
      response.send("New Flower Data Added Successfully");
 });
 
+//function for delete a object from the flowers array directly from browser
+app.delete("/api/flowers/:id",(request,response)=>{
+    //extracting client's entered flower id and save to new variable cid
+    let cid=request.params.id;
+    
+    //logic to delete: we will store all the flowers object not having client given id in a different array
+    let remainingFlowers=flowers.filter(flower=>flower.id!=cid);
+    
+    //now we get all objects except the one with requested id
+    //so we will replace the original flowers array with these remaining objects: 
+    flowers=remainingFlowers;
+    //now that onject will be deleted from the flowers array
+
+    response.send("flower with id: "+cid+" is deleted ");
+
+});
 
 
 app.listen(9010);
