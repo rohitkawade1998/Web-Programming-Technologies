@@ -60,11 +60,13 @@ app.get("/api/customers/:id",(request,response)=>{
 
 //adding validation to login page
 //logic to handle app.post for /api/login using credentials array.
+
+/*        //hard coded validation
 app.post("/api/login",(request,response)=>{
      //extracting client's entered credentials
      var user=request.body;
      
-     //hard coded validation
+
      if(user.username=="ravi" && user.password=="seed")
      {
          response.send("valid user")
@@ -73,7 +75,31 @@ app.post("/api/login",(request,response)=>{
          response.send("invalid user");
      }
 });
+*/
 
+ //Non-hard coded validation
+ app.post("/api/login",(request,response)=>{
+     
+     //extracting client's entered credentials
+     var user=request.body;
+
+     //one by one compairing user entered credentials with the already stored array objects credentials
+     //we will use inbuilt JSON function find() which will act like for loop and compare all credentials
+     let theUser=credentials.find(credential=>credential.username==user.username && credential.password==user.password);
+     //Now, if client given credentials will be present inside our credentials array
+     //then theUser object will get the onject from the credentials array
+     //so display: valid user
+     //else theUser object will beacome undefined as it will not get any value 
+     //so display: invalid user
+     if(theUser!==undefined)
+     {
+         response.send("valid user");
+     }
+     else
+     {
+          response.send("Invalid user");
+     }
+ });
 
 app.post("/api/register",(request,response)=>{
      //extracting client's entered registration data
