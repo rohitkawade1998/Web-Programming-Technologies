@@ -79,7 +79,7 @@ app.post("/api/login",(request,response)=>{
 
  //Non-hard coded validation
  app.post("/api/login",(request,response)=>{
-     
+
      //extracting client's entered credentials
      var user=request.body;
 
@@ -102,6 +102,7 @@ app.post("/api/login",(request,response)=>{
  });
 
 app.post("/api/register",(request,response)=>{
+    
      //extracting client's entered registration data
      var newuser=request.body;
      
@@ -110,6 +111,18 @@ app.post("/api/register",(request,response)=>{
 
      response.send("Customer Registration Successfull");
 });
+
+app.post("/api/flower",(request,response)=>{
+
+     //extracting client's entered flower data
+     var newFlower=request.body;
+     
+     //storing data into customers array using inbuilt function push() for JSON onject:
+     flowers.push(newFlower);
+
+     response.send("New Flower Data Added Successfully");
+});
+
 
 
 app.listen(9010);
