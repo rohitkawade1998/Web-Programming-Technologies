@@ -65,7 +65,7 @@ app.post("/api/login",(request,response)=>{
      var user=request.body;
      
      //hard coded validation
-     if(user.username=="ravi" && user.password="seed")
+     if(user.username=="ravi" && user.password=="seed")
      {
          response.send("valid user")
      } 
@@ -73,5 +73,18 @@ app.post("/api/login",(request,response)=>{
          response.send("invalid user");
      }
 });
+
+
+app.post("/api/register",(request,response)=>{
+     //extracting client's entered registration data
+     var newuser=request.body;
+     
+     //storing data into customers array using inbuilt function push() for JSON onject:
+     customers.push(newuser);
+
+     response.send("Customer Registration Successfull");
+});
+
+
 app.listen(9010);
 console.log("website is hosted on port no. 9010");
