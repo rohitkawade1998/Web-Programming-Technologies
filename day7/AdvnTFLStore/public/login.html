@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
+     <head>
         <title>Advance TFLStore</title>
-    </head>
-    <body>
+     </head>
 
-        <h1>Welcome To Login page </h1>
-        
-        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a> 
+     <body>
 
-    </body>
+         <h1>Welcome To Login page </h1>
+         <hr/>
+         <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a> 
+         <br/>
+
+         <!--here we connected client side UI with server side API-->
+         <!--as the client clicks the login button app.post(/api/login) (of server.js) will be automatically called-->
+         <!--then the validation will be performed as per code written inside app.post()-->
+         <form action="/api/login" method="POST" >
+             <label>User Name: </label>
+             <input type="text" id="username" name="username" required />
+             <br/>
+             <label>Password: </label>
+             <input type="password" id="password" name="password" required />
+             <br/>
+             <button type="submit" >Login</login>
+         </form>
+
+     </body>
 </html>

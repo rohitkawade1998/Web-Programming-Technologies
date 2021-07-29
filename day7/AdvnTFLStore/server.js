@@ -143,6 +143,23 @@ app.delete("/api/flowers/:id",(request,response)=>{
 
 });
 
+//function for delete a object from the flowers array directly from browser
+app.delete("/api/customer/:id",(request,response)=>{
+    //extracting client's entered customer id and save to new variable cid
+    let cid=request.params.id;
+    
+    //logic to delete: we will store all the flowers object not having client given id in a different array
+    let remainingCustomers=customers.filter(cust=>cust.id!=cid);
+    
+    //now we get all objects except the one with requested id
+    //so we will replace the original flowers array with these remaining objects: 
+    customers=remainingCustomers;
+    //now that onject will be deleted from the flowers array
+
+    response.send("Customer with id: "+cid+" is deleted ");
+
+});
+
 
 app.listen(9010);
 console.log("website is hosted on port no. 9010");
