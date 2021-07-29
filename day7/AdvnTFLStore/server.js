@@ -57,6 +57,21 @@ app.get("/api/customers/:id",(request,response)=>{
     response.send(customer);
 });
 
-app.post
+
+//adding validation to login page
+//logic to handle app.post for /api/login using credentials array.
+app.post("/api/login",(request,response)=>{
+     //extracting client's entered credentials
+     var user=request.body;
+     
+     //hard coded validation
+     if(user.username=="ravi" && user.password="seed")
+     {
+         response.send("valid user")
+     } 
+     else{
+         response.send("invalid user");
+     }
+});
 app.listen(9010);
 console.log("website is hosted on port no. 9010");
