@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+    </head>
+    <body>
+
+        <h1>Welcome To insert page </h1>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+         
+          <h2>Insert new Flower</h2>
+        <hr/>
+        <form action="/api/flower/" method="POST">
+     
+         <table>
+             <tr>
+                 <td><label>Id</label></td>
+                 <td><input type="text" name="id" id="id"/></td>
+             </tr>
+            
+             <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" name="name" id="name"/></td>
+             </tr>
+             <tr>
+                <td><label>Description</label></td>
+                <td><input type="multiline" name="desc" id="description"/></p></td>
+             </tr>
+            <tr>
+                <td><label> Price</label></td>
+                <td><input type="number" name="price" id="unitprice"/></td>
+            </tr>
+            <tr>
+                <td><label>Quantity</label></td>
+                <td><input type="number" name="quantity" id="quantity"/></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Insert</button></td>
+            </tr>
+         </table>
+        </form>
+
+         
+    </body>
+</html>
