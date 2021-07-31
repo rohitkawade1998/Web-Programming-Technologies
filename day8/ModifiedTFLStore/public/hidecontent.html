@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Advance TFLStore</title>
-       <!-- step1:Step 1 : link jQuery file from google  -->
+       <!-- step1:Step 1 : link jQuery file local storage at server side  -->
         <script src="scripts/jquery.min.js"></script>
     </head>
     <body>
@@ -17,17 +17,26 @@
 
          <h3>Press the Following Button to hide the below statment</h3>
          <br/>
-         <button id="hidebtn">Hide Now</button>
+         <button id="hide1">Hide 1</button>
          <br/>
-         <p >Rohit Kawade</p>
-         <p >Cool Frontend Developer</p>
+         <button id="hide2">Hide 2</button>
+
+         <br/>
+         <p id="1" >1. Rohit Kawade</p>
+         <p id="2" >2. Cool Frontend Developer</p>
 
          <script>
+         //added two button to delete a particular button
             $(document).ready(function(){
 
-                $("button").click(function(){
+                $("#hide1").click(function(){
 
-                    $("p").hide();
+                    $("#1").hide();
+                });
+
+                $("#hide2").click(function(){
+
+                    $("#2").hide();
                 });
             });
           </script>
