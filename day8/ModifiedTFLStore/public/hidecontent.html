@@ -1,0 +1,35 @@
+<!-- Hide content of paragraph using jQuery .-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+       <!-- step1:Step 1 : link jQuery file from google  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Welcome To Hide Content page </h1>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+         <h3>Press the Following Button to hide the below statment</h3>
+         <br/>
+         <button id="hidebtn">Hide Now</button>
+         <br/>
+         <p >Rohit Kawade</p>
+         <p >Cool Frontend Developer</p>
+
+         <script>
+            $(document).ready(function(){
+
+                $("button").click(function(){
+
+                    $("p").hide();
+                });
+            });
+          </script>
+    </body>
+</html>
