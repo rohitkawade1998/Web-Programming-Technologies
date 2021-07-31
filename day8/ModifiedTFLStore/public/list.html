@@ -1,0 +1,55 @@
+<!-- this web page will display the names of all the flowers from the flowers list from server side(flowers.json) -->
+<!--  here we will perform FETCH + DYNAMIC LISTING -->
+<!-- used DOM -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Advance TFLStore</title>
+        <!-- step1:Step 1 : link jQuery file available remotely  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head> 
+    <body>
+
+        <h1>Welcome To List page </h1>
+        <hr/>
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a> 
+        <br/>
+        
+        <p>Press the button to display list of available flowers :)</p>
+        <br/>
+        <td><button id="flowers" >Show Flowers</button></td>
+        
+        <p id="para"></p>
+        <script>
+           //Step 2: Write Event handler for Document.Ready
+           $(document).ready(function(){
+
+               // Step 3:Add event handler for Button Click
+               $("button").click(function(){
+                   console.log("Button Is Clicked !!!");
+
+                   var paraelement=document.getElementById("para");
+                   //now making asynchronous java script callusing $.get
+                   //first parameter: relative path of your web api(REST Api) 
+                   //Second parameter: call back function
+                   //callback function willl be invoked on receiving response from server REST Api,
+                     
+                     //Step 4:get data from server using $.get method
+                     $.get("/api/flowers",function(data,status){
+                         for(var i=0;i<data.length;i++)
+                         {
+                             paraelement.innerHTML = paraelement.innerHTML+" "+data[i].name;
+                         }
+
+                      });
+
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

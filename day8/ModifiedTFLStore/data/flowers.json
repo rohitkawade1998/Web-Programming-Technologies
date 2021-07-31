@@ -1,0 +1,6 @@
+[
+    {"id":1,"name":"Marigold","desc":"Wedding Flower","price":20,"Quantity":25 },
+    {"id":2,"name":"Rose","desc":"Valentine Flower","price":35,"Quantity":20 },
+    {"id":3,"name":"Tulip","desc":"Ocassional Flower","price":50,"Quantity":35 },
+    {"id":4,"name":"Lily","desc":"Fregnance Flower","price":40,"Quantity":20 }
+]
