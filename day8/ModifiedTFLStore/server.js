@@ -1,11 +1,14 @@
+const { response } = require('express');
 var express= require('express');
 var path= require('path');
 
-const app=express();
+
 
 var credentials=require("./data/credentials.json");
 var flowers=require("./data/flowers.json");
 var customers=require("./data/customers.json");
+const { request } = require('http');
+var app=express();
 
 //configure piblic folder as static folder to express module:
 //logic for middleware configuration  urlencoded and json().
@@ -158,6 +161,21 @@ app.delete("/api/customer/:id",(request,response)=>{
 
     response.send("Customer with id: "+cid+" is deleted ");
 
+});
+
+//server side put operation  for incoming HTTP put request
+app.put("/api/customers/:id",(request,response)=>{
+    var customerToBeUpdated=request.body;
+    let id=request.params.id;
+    for(var i=0;i<customers.length;i++)
+    {
+        if(customers[i].id==id)
+        {
+            customers[i]=customerToBeUpdated;
+        }
+        
+    }
+    response.send(request.body);
 });
 
 

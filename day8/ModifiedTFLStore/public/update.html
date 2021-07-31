@@ -1,0 +1,55 @@
+<!--  perform Ajax Server Side method requests using $.ajax function. .-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+       <!-- step1:Step 1 : link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h2>Ajax Server Side update requests using $.ajax function.</h2>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+        <h3> Press the following Button to update data of server: </h3>
+        <br/>
+        <button id="updateBtn">Update </button>
+        <br/>
+        <script>
+          $(document).ready(function(){
+             var url="http://localhost:9898/api/customers";
+              $("#updateBtn").click(function(){
+           
+                   var theCustomer={
+                    "id":"2",
+                   "firstname":"Sujal",
+                   "lastname":"Kawade",
+                   "email":"sujal.kawade@245",
+                   "contact":"8975553396"
+                   };
+                let url="/api/customers/"+theCustomer.id;
+             
+                  $.ajax({
+                      url: url,
+                      type: 'PUT',
+                      dataType: "json",
+                      contentType:"application/json; charset=utf-8",
+                      data:JSON.stringify(theCustomer),
+                      success: function (result) {
+                          console.log("customer is updated to server");
+                        },
+
+                      error:function(err){
+                            console.log(err);
+                        }
+                    });
+              });
+          });
+
+        </script>
+    </body>
+</html>
