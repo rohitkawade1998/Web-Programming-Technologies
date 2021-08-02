@@ -24,5 +24,6 @@ connection.connect(function(err){
     if(err) throw err;
 });
 
+//Export connection from mysqlconnect.js
 module.exports=connection; 
 
