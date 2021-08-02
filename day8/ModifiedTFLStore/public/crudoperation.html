@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ModifiedTFLStore</title>
+        <script src="scripts/jquery.min.js"></script>
+    </head>  
+    <body>
+        <h1> CRUD Operations Using Ajax MEchanism</h1>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+        <h3> Press the Respective Buttons for GET, POST, PUT , DELETE request</h3>
+        <br/>
+        <h4> For CUSTOMERS:</h4>
+        <button id="createBtnC">Create </button> <!--(POST)create a new customer: -->
+        <button id="readBtnC">Read </button> <!-- (GET) details of all the customers -->
+        <button id="updateBtnC">Update </button> <!--create a new customer: -->
+        <button id="deleteBtnC">Delete </button> <!--create a new customer: -->
+        <br/>
+        <p id="displayCustomer"></p>
+        <br/>
+        <h4> For Flowers:</h4>
+        <button id="createBtnF">Create </button> <!--(POST)create a new customer: -->
+        <button id="readBtnF">Read </button> <!-- (GET) details of all the customers -->
+        <button id="updateBtnF">Update </button> <!--create a new customer: -->
+        <button id="deleteBtnF">Delete </button> <!--create a new customer: -->
+        <br/>
+        <p id="displayFlower"></p>
+        <script>
+        $(document).ready(function(){
+            
+                //Customers: server side CRUD operations using ajax mechanism
+
+            //create a new customer:
+            $("#createBtnC").click(function(){
+                var theCustomer={
+                    "id":"89",
+                    "firstname":"Tanmay",
+                    "lastname":"Bhatt",
+                    "email":"tanmaybhatt@1245",
+                    "contact":"643125798"
+                     };
+                     //C: Create Operation
+                     let url="/api/customers";
+                $.ajax({
+                    url:url,
+                    type: 'POST',
+                    dataType: "json",
+                    contentType:"application/json; charset=utf-8",
+                    data:JSON.stringify(theCustomer),
+                    success: function(result){
+                        console.log("new customer is posted to server");
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+
+                });
+            });
+             //R: Read Operation
+            $('#readBtnC').click(function(){
+                let url="/api/customers";
+                $.ajax({
+                    url:url,
+                    type:'GET',
+                    dataType: "json",
+                    success:function(result){
+                        console.log(result);
+                        let dispElement=document.getElementById("displayCustomer");
+                        dispElement.innerHTML="all customers:\n"+JSON.stringify(result); //displayed at browser screen
+                        console.log("the customer details are displayed"); //this msg is displayed at browser console
+
+                    },
+                    error:function(err)
+                    {
+                        console.log(err);
+                    }
+
+                });
+            });
+
+            //U: Update Operation
+            $("#updateBtnC").click(function(){
+
+               var theCustomer={
+                    "id":2,
+                   "firstname":"Sujal",
+                   "lastname":"Kawade",
+                   "email":"sujal.kawade@245",
+                   "contact":9333333333
+                   };
+                let url="/api/customers/"+theCustomer.id;
+                    $.ajax({
+                        url: url,
+                        type: 'PUT',
+                        dataType: "json",
+                        contentType:"application/json; charset=utf-8",
+                        data:JSON.stringify(theCustomer),
+                        success: function(result){
+                            let dispElement=document.getElementById("displayCustomer");
+                         dispElement.innerHTML="Updated customer:\n"+JSON.stringify(result); //displayed at browser screen
+                            console.log("Customer data is updated to server");                                
+                        },
+                        error:function(err){
+                            console.log(err);
+                        }
+                    });
+            });
+
+            //D: Delete Operation
+            $("#deleteBtnC").click(function(){
+                theCustomer={
+                    "id":3
+                };
+                let url="/api/customer/"+theCustomer.id;
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                        dataType: "json",
+                        contentType:"application/json; charset=utf-8",
+                        data:JSON.stringify(theCustomer),
+                        success: function(result){
+                            let dispElementtt=document.getElementById("displayCustomer");
+                            dispElementtt.innerHTML="Customer with id: "+theCustomer.id+" is detttttttleted ."; //displayed at browser screen
+                            console.log("Customer data is deleted to server");    //displayed at browser console                            
+                        },
+                        error:function(err){
+                            console.log(err);
+                        }
+                })
+
+            });
+
+                //Flowers: server side CRUD operations using ajax mechanism
+
+             //create a new Flower:
+            $("#createBtnF").click(function(){
+                var theFlower={
+                "id":5,
+                "name":"Lotus",
+                "desc":"Water Flower",
+                "price":50,
+                "Quantity":35 
+                };
+
+                //C: Create Operation for flowers
+                let url="/api/flower";
+                $.ajax({
+                    url:url,
+                    type: 'POST',
+                    dataType: "json",
+                    contentType:"application/json; charset=utf-8",
+                    data:JSON.stringify(theFlower),
+                    success: function(result){
+                        console.log("new Flower is posted to server");
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+
+                });
+            });
+
+            //R: Read Operation
+            $('#readBtnF').click(function(){
+                let url="/api/flowers";
+                $.ajax({
+                    url:url,
+                    type:'GET',
+                    dataType: "json",
+                    success:function(result){
+                        console.log(result);
+                        let dispElement=document.getElementById("displayFlower");
+                        dispElement.innerHTML="all Flowers:\n"+JSON.stringify(result); //displayed at browser screen
+                        console.log("the flower details are displayed"); //this msg is displayed at browser console
+
+                    },
+                    error:function(err)
+                    {
+                        console.log(err);
+                    }
+
+                });
+            });
+
+            //U: Update Operation
+            $("#updateBtnF").click(function(){
+
+               var theFlower={
+                "id":3,
+                "name":"Gobhi Flower",
+                "desc":"Kitchen Flower",
+                "price":65,
+                "Quantity":3 
+                };
+                let url="/api/flowers/"+theFlower.id;
+                
+                $.ajax({
+                        url: url,
+                        type: 'PUT',
+                        dataType: "json",
+                        contentType:"application/json; charset=utf-8",
+                        data:JSON.stringify(theFlower),
+                        success: function(result){
+                            let dispElement=document.getElementById("displayFlower");
+                         dispElement.innerHTML="Updated Flower:\n"+JSON.stringify(result); //displayed at browser screen
+                            console.log("Flower data is updated to server");                                
+                        },
+                        error:function(err){
+                            console.log(err);
+                        }
+                    });
+            });
+
+            //D: Delete Operation
+            $("#deleteBtnF").click(function(){
+                theFlower={
+                    "id":3
+                };
+                let url="/api/flowers/"+theFlower.id;
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                        dataType: "json",
+                        contentType:"application/json; charset=utf-8",
+                        data:JSON.stringify(theFlower),
+                        success: function(result){
+                            let dispElementtt=document.getElementById("displayFlower");
+                            dispElementtt.innerHTML="Flower with id: "+theFlower.id+" is detttttttleted ."; //displayed at browser screen
+                            console.log("Flower data is deleted to server");    //displayed at browser console                            
+                        },
+                        error:function(err){
+                            console.log(err);
+                        }
+                })
+
+            });
+
+        });
+        </script>
+    </body>  
+</html>
