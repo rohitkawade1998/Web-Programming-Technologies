@@ -23,6 +23,15 @@
             </tr>
         </table>
 
+
+        <hr/>
+        <br/>
+        <p>Press the Below Button to change the content of the text boxes :</p>
+        
+        <input type="text" value="Rahul" id="idcontent1" name="username1" />
+        <input type="text" value="Kawade" id="idcontent2" name="password1" /><br/>
+        <td><button id="btnchange" >Change Content</button></td><br/>
+
         <script>
         //here qwe will write the operation to be performed when button is clicked:
 
@@ -43,9 +52,22 @@
                  };
 
                     //displaying user entered details at browsers console
-                 console.log(credential);
+                 console.log(credential);                
 
-            })
+            });
+
+
+            $("#btnchange").click(function(){
+                        console.log("change button is clicked");
+                 var newUser={//data which will replace the original data of the text box
+                         "username":"Shyam",
+                         "password":"Patel"
+                         };
+
+                 $("#idcontent1").val(newUser.username);
+                 $("#idcontent2").val(newUser.password);
+
+                });
 
         });
 
