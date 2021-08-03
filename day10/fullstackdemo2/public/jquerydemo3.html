@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Demo 3</title>
+        <!-- link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1> Displaying Data fetched from Server Side: </h1>
+
+        <hr/>
+        <input id="idinputflower" value="1" type="number" />
+        <button id="btnFetchFlowers">Fetch Flowers</button><br/>
+        <p id="result"></p>
+        
+        <table>
+        <br/>
+            <tr>
+                <td>Title:</td>
+                <td><p id="pTitle"></p></td>
+            </tr>
+            
+
+            <tr>
+                <td>Image:</td>
+                <td><img id="imgflower" width="100" height="100"></img></td>
+            </tr>
+
+            <tr>
+                <td>Description:</td>
+                <td><p id="pDescription"></p></td>
+            </tr>
+
+            <tr>
+                <td>Unit Price:</td>
+                <td><p id="pUnitPrice"></p></td>
+            </tr>
+
+            <tr>
+                <td>Quantity awailable:</td>
+                <td><p id="pQuantity"></p></td>
+            </tr>
+
+        </table>
+
+        <script>
+                $(document).ready(function(){
+
+                     $("#btnFetchFlowers").click(function(){
+
+                         var id=$("#idinputflower").val();
+                    if(id>0 && id<6)
+                         {
+                              console.log("fetching data from server through external rest api");
+                                //to call rest api we need to use ajax function
+
+                                //showing result message at web page
+                                $("#result").text("Flowers Data Displayed\n");
+
+                                $.ajax({
+                                       url:"/api/flowers/"+id,
+                                       type:"GET",
+                                       success:function(flower){
+                                          console.log(flower) //displaying fetched data at the output
+
+                                           //showing the fetched content to the web page:
+                                            $("#pTitle").text(flower.name);
+                                            $("#pDescription").text(flower.description);
+                                            $("#pUnitPrice").text(flower.unitprice);
+                                            $("#pQuantity").text(flower.quantity);
+
+                                            //to display image there is a different unction used : attr("src", imageurl )
+                                            $("#imgflower").attr("src", flower.imageurl);
+
+                                          },
+                                       error:function(err)
+                                          {
+                                            console.log(err);
+                                          }
+                                 });
+
+                         }
+                         else
+                         {
+                             $("#result").text("Please Enter Id in between 1-5 only !!!!!\n");
+                             console.log("Please Enter Id in between 1-5");
+                         }
+
+                     });                  
+
+                });
+            
+        </script>
+    </body>
+ </html>
