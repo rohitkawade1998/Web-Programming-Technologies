@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Demo 1</title>
+        <!-- link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Friends Company</h1>
+        <hr/>
+        <p>Shopping Platform for every individual</p>
+        <br/>
+        <h3>Explore Categories:</h3>
+        <ol> 
+             <li> Male clothing</li>
+             <li> Female clothing</li>
+             <li> Electronics Gadgets</li>
+             <li> House Essentiasls</li>
+             <li> Home Fashion</li>
+        </ol>
+        <h3>Operations on Button:</h3>
+        <button id="btnApply"> Apply.</button>
+        <button id="btnReset"> Reset.</button>
+        <button id="btnHide"> Hide it.</button>
+        <button id="btnShow"> Show it.</button>
+        <button id="btnSlowHide"> Slow Hide.</button>
+         <br/> <br/>
+        <p id="para">--Default state--</p>
+        <p id="hidingpara">--Default state for hiding para--</p>
+
+        <!-- noww we will add dynamic styling to our page:-->
+        <script>
+        // to make our html page a dynamic page we use script block and jquery and ajax function
+        //first we $- to access a particular object from from dom tree
+        //we want to perform certain operation when DOM tree is ready:
+        $(document).ready(function(){
+            console.log("DOM tree is Readyy");
+                //Perform certain operation when Button is clicked:
+                $("#btnApply").click(function(){
+                    console.log("Apply Button is Pressed");
+                    //Data Binding: associating data element with HTML element
+                    $("#para").text("--Apply is Pressed--");
+                });
+
+                 $("#btnReset").click(function(){
+                    console.log("Reset Button is Pressed");
+                    
+                     $("#para").text("--Reset is Pressed--");
+                });
+
+                $("#btnHide").click(function(){
+                    console.log("Hide Button is Pressed");
+                    
+                     $("#hidingpara").hide();
+                });
+
+                $("#btnSlowHide").click(function(){
+                    console.log("SLow Hide Button is Pressed");
+                    
+                     $("#hidingpara").hide(1000);
+                });
+
+                $("#btnShow").click(function(){
+                    console.log("Show Button is Pressed");
+                    
+                     $("#hidingpara").show();
+                });
+
+            });
+ 
+
+        </script>
+
+    </body>
+</html>
