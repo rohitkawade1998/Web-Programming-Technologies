@@ -1,0 +1,44 @@
+<!-- Post data to server REST API using  jQuery .-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+       <!-- step1:Step 1 : link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h2>Post data to server REST API using  jQuery </h2>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+        <h3> press the following Button to send data to server: </h3>
+        <br/>
+        <button> add data</button>
+        <script>
+
+        $(document).ready(function(){
+
+            $("button").click(function(){
+
+                var newCustomer={
+                    "id":6,
+                    "firstname":"Komal",
+                    "lastname":"yadav",
+                    "email":"komal.yadav@245",
+                    "contact":648975464 
+                    };
+                    let url="/api/register";
+                    $.post(url,newCustomer,function(){
+                        console.log("Data is posted to server.")
+                    });                
+            });
+        });
+
+         </script>
+    </body>
+</html>
+

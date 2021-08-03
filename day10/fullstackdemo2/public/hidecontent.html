@@ -1,0 +1,44 @@
+<!-- Hide content of paragraph using jQuery .-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+       <!-- step1:Step 1 : link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Welcome To Hide Content page </h1>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+         <h3>Press the Following Button to hide the below statment</h3>
+         <br/>
+         <button id="hide1">Hide 1</button>
+         <br/>
+         <button id="hide2">Hide 2</button>
+
+         <br/>
+         <p id="1" >1. Rohit Kawade</p>
+         <p id="2" >2. Cool Frontend Developer</p>
+
+         <script>
+         //added two button to delete a particular button
+            $(document).ready(function(){
+                // # is used to operate on a particular button, and also to hide a particular para
+                $("#hide1").click(function(){
+
+                    $("#1").hide();
+                });
+
+                $("#hide2").click(function(){
+
+                    $("#2").hide();
+                });
+            });
+          </script>
+    </body>
+</html>
