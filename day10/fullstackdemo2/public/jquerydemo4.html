@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Demo 4</title>
+        <!-- link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1> Fill the following Form : </h1>
+        <h3>Your details will be sent to server side customers array: </h3>
+
+        <hr/>
+
+        <form action="/api/register" method="POST">
+
+             <!-- Text Box  -->
+             First Name: <input id="idusername" value="Rahul" type="text" name="firstname" /><br/><br/>
+
+             <!-- Text Box  -->
+             Last Name: <input id="idlastname" value="kawade" type="text" name="lastname" /><br/><br/>
+
+             <!-- Date Box  -->
+             Passing date : <input id="iddate" type="date" name="resultdate" /><br/><br/>
+
+             <!-- Check Box  -->
+             Passed: <input type="checkbox" value="passed" name="result" /><br/><br/>
+
+             <p>Select your Qualification: </p>
+             <input id="idbca"  type="radio" value="BCA" name="qualification" />
+             <label for="idbca">BCA</label>     
+
+             <input id="idbe"  type="radio" value="BCA" name="qualification" />
+             <label for="idbe">BE</label>   
+
+             <input id="idbsc"  type="radio" value="BCA" name="qualification" />
+             <label for="idbsc">BSC</label><br/>  <br/> 
+
+             <button id="btnSubmit" type="submit" >Register</button><br/>
+
+         </form>
+    </body>
+ </html>
