@@ -1,19 +1,26 @@
-// File to perform database level table CRUD Operations against customers table.
 
-//importing connection module to fire querry:  
-var connection=require('./mysqlconnect');
+// Implementation for MySQL Database Connectivity
+// mysql module to be imported
+// Database Connectivity
+//Step 1: Create Connection
+//step 2: Connect to database connection
+//step 3: Define SQL Query
+//step 4: Send SQL Query to MySQL
+//step 5: OnReceive Result collect data and display data
+var sql=require('./mysqlconnect'); //importing connection object for mysql connectivity
 
-//Add insert, update, remove, getAll, getById functions to implement database CRUD operations.
+
 
 //getAll
 var getAll=function(){
     var query="select * from customers";
-   connection.query(query,function(err,data){
+   sql.query(query,function(err,data){
        if(err){
            console.log("err: "+err);
        }
        {
            console.log(data);
+           
        }
    });
 
@@ -22,7 +29,7 @@ var getAll=function(){
 //getById
 var getById=function(id){
     var query="select * from customers where custid="+id;
-   connection.query(query,function(err,data){
+   sql.query(query,function(err,data){
        if(err){
            console.log("err: "+err);
        }
@@ -36,7 +43,7 @@ var getById=function(id){
 //insert
 var insert=function(firstname,lastname,email,contactnumber){
     var query="insert into customers values(default,'"+firstname+"','"+lastname+"','"+email+"',"+contactnumber+")";
-   connection.query(query,function(err,data){
+    sql.query(query,function(err,data){
        if(err){
            console.log("err: "+err);
        }
@@ -50,7 +57,7 @@ var insert=function(firstname,lastname,email,contactnumber){
 //update
 var update=function(id,firstname,lastname,email,contactnumber){
     var query="update customers set firstname='"+firstname+"',lastname='"+lastname+"',email='"+email+"',contactnumber="+contactnumber+" where custid="+id;
-   connection.query(query,function(err,data){
+   sql.query(query,function(err,data){
        if(err){
            console.log("err: "+err);
        }
@@ -64,7 +71,7 @@ var update=function(id,firstname,lastname,email,contactnumber){
 //remove
 var remove=function(id){
     var query="delete from customers where custid="+id;
-   connection.query(query,function(err,data){
+   sql.query(query,function(err,data){
        if(err){
            console.log("err: "+err);
        }
@@ -76,6 +83,10 @@ var remove=function(id){
 };
 
 
+
+
+
+
  getAll();
 
 //getById(2);
@@ -85,9 +96,3 @@ var remove=function(id){
 //update(4,'SHRUJAN','MAHAJAN','mahajans@gmail.com',9867892788);
 
 //remove(4);
-
-
-
-
-
-

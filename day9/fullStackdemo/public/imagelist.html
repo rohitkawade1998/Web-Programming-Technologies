@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+    </head>
+    <body>
+
+        <h1>Welcome To Image list page </h1>
+        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+        | <a href="/imagelist.html">Image List </a>
+        <hr/>
+
+         <h3>Todays fresh Flowers</h3>
+        <div>
+            <ul id="flowerslist">
+            </ul>
+        </div>
+        <script>
+
+           var flowers=[
+                { "id":1,"name":"Marigold", "description":"Wedding flower","unitprice":12,"imageurl":"/images/marigold.jpg", "quantity":5000,"likes":45000},
+                { "id":2,"name":"Jasmine", "description":"valentine flower","unitprice":50,"imageurl":"/images/jasmine.jpg", "quantity":400,"likes":7600},
+                { "id":3,"name":"Lily", "description":"worship flower","unitprice":10, "imageurl":"/images/lily.jpg","quantity":9800,"likes":35000},
+                { "id":4,"name":"Rose", "description":"delicate flower","unitprice":20,"imageurl":"/images/rose.jpg", "quantity":1400,"likes":25000}
+            ];
+           
+            var listFlowers=document.getElementById("flowerslist");
+            //dynamically append node with image 
+
+            for(var i=0;i<flowers.length;i++)
+            {
+                var node = document.createElement("LI");
+                var url = flowers[i].imageurl;
+                var image = new Image(); //Inbuilt
+                image.src = url;
+                image.widht=100;
+                image.height=100;
+                node.appendChild(image);
+                listFlowers.appendChild(node);
+            }
+        </script>
+
+    
+
+
+    </body>
+</html>

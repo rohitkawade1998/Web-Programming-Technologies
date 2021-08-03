@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+    </head>
+    <body>
+
+        <h1>Welcome To Apend list page </h1>
+      
+        <hr/>        
+        <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+
+        <br/>
+        
+         <h3>Press the below button to get the list of flowers: </h3>
+         <br/>
+        <button onclick="populateFlowersList()">Try it</button>
+        
+        <br/>
+        <ul id="flowersList">
+        </ul>
+
+        <script>
+    
+       var flowers=[
+            { "id":1,"name":"Marigold", "description":"Wedding flower","unitprice":12,"imagerul":"/images/marigold.jpg", "quantity":5000,"likes":45000},
+            { "id":2,"name":"Jasmine", "description":"valentine flower","unitprice":50,"imagerul":"/images/jasmine.jpg", "quantity":400,"likes":7600},
+            { "id":3,"name":"Lily", "description":"worship flower","unitprice":10, "imagerul":"/images/lily.jpg","quantity":9800,"likes":35000},
+            { "id":4,"name":"Rose", "description":"delicate flower","unitprice":20,"imagerul":"/images/rose.jpg", "quantity":1400,"likes":25000}
+        ]
+
+        function populateFlowersList() {
+        //code segment for inserting new node into HTML element
+        //createElement
+        //createTextNode
+        //appendChild
+        var listFlowers=document.getElementById("flowersList");
+
+        for(var i=0;i<flowers.length;i++){
+            //create new html element LI
+            
+            var node = document.createElement("LI");
+            var flowerTextNode = document.createTextNode(flowers[i].name);
+            node.appendChild(flowerTextNode);
+            listFlowers.appendChild(node);           
+
+          
+        }
+     }
+     </script>
+
+
+    </body>
+</html>

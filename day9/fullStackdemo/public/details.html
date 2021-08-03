@@ -1,0 +1,77 @@
+<!--without server , displaying the flower details hard coded inside the details.html file-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advance TFLStore</title>
+    </head>
+    <body>
+
+        <h1>Welcome To Details page </h1>
+        
+                <a href="/index.html">Home</a> | <a href="/details.html">Details </a> | <a href="/list.html">List </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a>   | <a href="/appendlist.html">Apend list</a>
+            <hr/>
+            <h2>Flowers Details: </h2>
+        
+         <table>
+             <tr>
+                 <td><label>Id</label></td>
+                 <td><p id="id"></p></td>
+             </tr>
+             <tr>
+                 <td><label>Image</label></td>
+                 <td><img id="image" src="/images/marigold.jpg" width="200" height="200"></img></td>
+             </tr>
+             <tr>
+                 <td><label>Title</label></td>
+                 <td><p id="title"></p></td>
+             </tr>
+             <tr>
+                 <td><label>Description</label></td>
+                 <td><p id="description"></p></td>
+             </tr>
+             <tr>
+                 <td><label>Unit Price</label></td>
+                 <td><p id="unitprice"></p></td>
+            </tr>
+            <tr>
+                 <td><label>Quantity</label></td>
+                 <td><p id="quantity"></p></td>
+            </tr>
+            <tr>
+                 <td><label>Likes</label></td>
+                 <td><p id="likes"></p></td>
+            </tr>
+         </table>
+
+         <a href="/cart.html">Add to cart</a>
+        <script>
+           var flower= { 
+                        "id":1,
+                        "title":"Marigold",
+                        "description":"Wedding flower",
+                        "unitprice":12,
+                        "imageurl":"/images/marigold.jpg", 
+                        "quantity":5000,
+                        "likes":45000
+            };
+            
+            //get the references of those paragraph and image elements
+            var id=document.getElementById("id");
+            var title=document.getElementById("title");
+            var description=document.getElementById("description");
+            var unitprice=document.getElementById("unitprice");
+            var quantity=document.getElementById("quantity");
+            var image=document.getElementById("image");
+            var likes=document.getElementById("likes");
+        
+         //set innerHTML of each element by json object key
+           id.innerHTML=flower.id;
+           image.src=flower.imageurl;
+           title.innerHTML=flower.title;
+           unitprice.innerHTML=flower.unitprice;
+           quantity.innerHTML=flower.quantity;
+           likes.innerHTML=flower.likes;
+           description.innerHTML=flower.description;  
+        </script>
+    </body>
+</html>
