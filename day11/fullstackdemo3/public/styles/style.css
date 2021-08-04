@@ -5,3 +5,16 @@
     h1 {color:darkgreen;text-align:left;}
     h2 {color:darkred;text-align:center;}
     h3 {color:blue;text-align:left;}
+
+    /*  writing multiple CSS classses for multiple div to make our page dynamically  */ 
+    .myDivStyle1{  /* first css class  */
+            background-color:blue;
+            height:100px;
+            width:100px
+        }
+
+    .myDivStyle2{   /* second css class  */
+            background-color:green;
+            height:200px;
+            width:100px
+        }
