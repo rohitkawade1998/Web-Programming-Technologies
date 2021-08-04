@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+       
+        <h1>ES6 Javascript Syntax</h1>
+        <script>
+        //---this is MODERN JAVA SCRIPT SYNTAX to create Object ---
+        // Apply OBJECT ORIENTED PROGRAMMING in java script
+
+        //creating a class Product:
+        class Product{
+
+             //Constructor Overloading is NOT ALLOWED in JAVASCRIPT:   
+            //i.e, In Java Script only one contructor is allowed inside a class
+            //either use default or parametrised constructor:
+
+            constructor(name,price,data){ //parametrised constructor
+                //declaring member variables and initialising also
+                this.title=name;
+                this.unitprice=price;
+                this.description=data;
+            }
+
+            //member functions:
+            sell(){
+
+                 //to concatenate a variable inside the output message string we use a new syntax displayed below:
+                return `${this.title} is available`;
+            }
+
+            update(){
+                   
+                return `${this.title} is updated`;
+
+            }
+        };
+
+        //creating object lotus of type Product
+        let lotus=new Product("lotus",23,"Workship FLower");
+
+        console.log(lotus); //displaying total object content at browser console
+
+        console.log(lotus.title); //displaying the title for the lotus object
+
+        console.log(lotus.sell()); //class's member function are invoked using object of that class
+
+        console.log(lotus.update()); //class's member function are invoked using object of that class
+
+         //creating another object rose of type Product
+        let rose=new Product("rose",30,"Valentine FLower");
+
+        console.log(rose); //displaying total object content
+
+        console.log(rose.title); //displaying the title for the lotus object
+
+        console.log(rose.sell()); 
+
+        console.log(rose.update());
+
+        //creating the JSON array
+        let arrayproducts=[];
+
+        //storing the object into the array:
+        arrayproducts[0]=lotus;
+        arrayproducts[1]=rose;
+
+        console.log("-------------------");
+        //printing the total array at the browser console:
+        console.log(arrayproducts);
+
+        console.log("-------------------");
+         //printing 1st object from the array at the browser console:
+        console.log(arrayproducts[0]);
+
+        //using the for loop for printing the title of each object
+        for(var i=0;i<products.length;i++){
+            console.log(arrayproducts[i].title);
+        };
+
+       
+       </script>
+    </body>
+</html>
