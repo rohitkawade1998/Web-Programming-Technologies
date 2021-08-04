@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+
+        <h1>OBJECTS! OBJECTS! OBJECTS!</h1>
+        <script>
+        //we always declare a object here by using let keyword 
+        //and we define the attributes for the object inside it in the form of KEY VALUE PAIRS
+        // person is not the object but the refrence to that object
+        let person={
+            firstname:"Shivam",
+            lastname:"Mishra",
+            age:"22",
+            email:"mishrashivam@gmail.com"
+        };      
+        
+        let product1={
+            id:1,
+            title:"Rose",
+            discription:"Valentine Flower",
+            unitprice:25,
+            quantity:300,
+            imageurl:"./images/rose.jpg"
+        };   
+
+        let product2={
+            id:2,
+            title:"jasmine",
+            discription:"Sweet Smelling Flower",
+            unitprice:35,
+            quantity:150,
+            imageurl:"./images/jasmine.jpg"
+        }; 
+
+        console.log(person); //displaying the whole object contents in the browsers console
+        console.log(person.firstname);  //displaying only firstname
+
+        let product3=product2; //shallow copy
+        //product2 and product3 are referencing to the same object
+         
+        //we can define/change the values to the attribute outside of the object also:
+        product3.id="3";
+        product3.title="Lotus";
+
+        console.log(product1);
+        console.log(product2);
+        console.log(product3);
+       </script>
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+[
+    {"id":1,"name":"Marigold","description":"Wedding flower","unitprice":12,"imageurl":"/images/marigold.jpg","quantity":5000,"likes":45000},
+    {"id":2,"name":"Jasmine","description":"valentine flower","unitprice":50,"imageurl":"/images/jasmine.jpg","quantity":400,"likes":7600},
+    {"id":3,"name":"Lily","description":"worship flower","unitprice":10,"imageurl":"/images/lily.jpg","quantity":9800,"likes":35000},
+    {"id":4,"name":"Rose","description":"delicate flower","unitprice":20,"imageurl":"/images/rose.jpg","quantity":1400,"likes":25000},
+    {"id":5,"name":"gerbera","description":"Blossom flower","unitprice":12,"imageurl":"/images/gerbera.jpg","quantity":5000,"likes":45000}
+   
+    ]
