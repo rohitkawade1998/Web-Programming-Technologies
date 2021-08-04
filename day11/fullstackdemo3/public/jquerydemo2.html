@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Demo 2</title>
+        <!-- link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1> Table Operations </h1>
+        <hr/>
+        <table>
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" value="Rahul" id="idusername" name="username" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" value="seed" id="idpassword" name="password" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="btnLogin" >Login</button></td>
+            </tr>
+        </table>
+
+
+        <hr/>
+        <br/>
+        <p>Press the Below Button to change the content of the text boxes :</p>
+        
+        <input type="text" value="Rahul" id="idcontent1" name="username1" />
+        <input type="text" value="Kawade" id="idcontent2" name="password1" /><br/>
+        <td><button id="btnchange" >Change Content</button></td><br/>
+
+        <script>
+        //here qwe will write the operation to be performed when button is clicked:
+
+        $(document).ready(function(){
+
+            //when button will be clicked store the data inside box to a json onject
+            $("#btnLogin").click(function(){
+
+                 //use val() function to get the data from the input text box
+                 //store the data into a different variable
+                 var username=$("#idusername").val();
+                 var password=$("#idpassword").val();
+
+                 var credential={//storing the data into a JSON object
+                         "username":username,
+                         "password":password
+
+                 };
+
+                    //displaying user entered details at browsers console
+                 console.log(credential);                
+
+            });
+
+
+            $("#btnchange").click(function(){
+                        console.log("change button is clicked");
+                 var newUser={//data which will replace the original data of the text box
+                         "username":"Shyam",
+                         "password":"Patel"
+                         };
+
+                 $("#idcontent1").val(newUser.username);
+                 $("#idcontent2").val(newUser.password);
+
+                });
+
+        });
+
+        </script>
+     </body>
+</html>
