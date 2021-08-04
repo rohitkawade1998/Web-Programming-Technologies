@@ -1,0 +1,43 @@
+<!--in this we will Create a login Page -->
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>boot demo2</title>
+        <script src="scripts/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+            
+    </head>
+
+    <body>
+
+        <div class="container">
+        <h2>LOGIN PAGE- [ Vertical (basic) form ]</h2>
+        <!--Create a login form, after button click post the form to the server side and perform the validation at server side, and display the result -->
+            <form action="/api/login" method="POST">
+                <div class="form-group">
+                <label for="idusername">Username:</label>
+                <input type="text" class="form-control" id="idusername" placeholder="Enter Username" name="username">
+                </div>
+                <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                </div>
+                <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+</html>
