@@ -9,7 +9,7 @@
         
         <style>  /*inline css */
         .myDivStyleDef{  /* (coder defined) Default css class for this file only  */
-            background-color:blue;
+            background-color:yellow;
             height:100px;
             width:100px
         }
@@ -22,7 +22,10 @@
             $(document).ready(function(){
                 $('#btn').click(function(){
                     //when this button will be pressed then change the color of the div() to light blue
-                    $('div.myDivStyleDef').css('background','lightblue')
+                    $('div.myDivStyleDef').css('background','lightgreen');
+                     $('div.myDivStyleDef').css('width','200px');
+                      $('div.myDivStyleDef').css('font-size','50px');
+
                 });
             });
 

@@ -8,13 +8,13 @@
 
     /*  writing multiple CSS classses for multiple div to make our page dynamically  */ 
     .myDivStyle1{  /* first css class  */
-            background-color:blue;
+            background-color:orange;
             height:100px;
             width:100px
         }
 
     .myDivStyle2{   /* second css class  */
-            background-color:green;
+            background-color:lightblue;
             height:200px;
             width:100px
         }
