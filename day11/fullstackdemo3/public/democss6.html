@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+             <title>CSS Demo 6</title> 
+
+     <!-- linking the css file here to use the classes for dynamic display of the div --> 
+        <link rel="stylesheet" href="styles/style.css" >  <!-- External CSS  -->
+        
+        <style>  /*inline css */
+        .myDivStyleDef{  /* (coder defined) Default css class for this file only  */
+            background-color:blue;
+            height:100px;
+            width:100px
+        }
+        </style>
+
+        <!-- link jQuery file local storage at server side  -->
+        <script src="scripts/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#btn').click(function(){
+                    //when this button will be pressed then change the color of the div() to light blue
+                    $('div.myDivStyleDef').css('background','lightblue')
+                });
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>Friends Company</h1>
+        <hr/>
+
+         <!-- 1 div in which first CSS class is used from external file--> 
+         <div id="div1" class="myDivStyle1">Div 1
+         </div>
+
+         <br/>
+          <!-- 2 div in which first CSS class is used from external file--> 
+         <div id="div2" class="myDivStyle2">Div 2
+         </div>
+
+          <br/>
+          <!-- 3 div in which first CSS class is used from this file--> 
+         <div id="div3" class="myDivStyleDef">Div 3
+         </div>
+         <br/>
+
+         <button id="btn">Press </button>
+
+    </body>
+
+</html>
