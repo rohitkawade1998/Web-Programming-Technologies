@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+
+        <h1>OBJECTS! --DEMO2-- OBJECTS!</h1>
+        <script>
+        //---this is CLASSICAL JAVA SCRIPT SYNTAX to create Object ---
+
+        //this Product() acts like a blue print, associated with the prototype object using oBject.create
+        //and using that blue print we can create multiple instances
+        function Product(name,price){
+        //creating object using Object.create() --inbuilt provided:
+        let product=Object.create(constructorObject);
+        //this Object.create function contains the prototype object attached to it,
+        //this prototype object is keeping all the methods associated with this instance as a collection
+        //constructorObject will be the Prototype Object for this created object
+
+        //setting state to object just created
+        //we define member variables 
+        //as well as initialise them with the user given values at the time of calling the function
+        product.title=name;
+        product.unitPrice=price;
+        return product;
+
+        };
+
+        //define behaviour to the prototype object
+        let constructorObject={ //defining the prototype object
+            //member function for the object whose reference is product
+            sell:function(){
+                return "product is sold";
+            },
+
+            update:function(){
+                return "product is updated";
+            },
+        };
+
+        //object orientation
+
+        //creating instances usig the Product Function( acting like a class)
+        let flower1=Product("Rose",12);
+        let flower2=Product("Lotus",35);
+
+        console.log(flower1); //displaying fower1 content
+        console.log("------------"); //to seperate output at browser console
+
+        console.log(flower2);
+        console.log("------------");
+
+         console.log(flower1.title); //displaying title attribute for flower1
+        console.log("------------");
+
+        console.log(flower2.title); //displaying title attribute for flower2
+        console.log("------------");
+
+        console.log(flower1.sell());  //calling sell() for flower1
+        console.log("------------");
+
+        console.log(flower2.sell()); //calling sell() for flower2
+        console.log("------------");
+
+
+       
+       </script>
+
+    </body>
+</html>
