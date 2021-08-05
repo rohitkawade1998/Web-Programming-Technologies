@@ -1,0 +1,47 @@
+<!-- writinga html file , 
+and when this file will be invoked then display a JSON file
+consisting some json objects , without using JQUERY-->
+
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>FETCH SERVER DATA  --</title>
+        </head>
+        <body>
+
+        <h3> FETCHING data from servr and displaying on the browser Console </h3>
+           
+            <script>
+            //Reactive Programming:
+             //declaring function:
+             async function getResponseFromServer(){
+                 
+                 //because our function is fetching data from the server
+                 //so it might happen that something error is occred 
+                 //so we must handle the exception using try and catch block
+                 //bcaz external resourcs may result in success result or failure result
+                 try{
+                     //fetch is a inbuilt function available which accepts a url and fetches the data
+                     //depending upon server,netword speed the response will come fast/slow
+                     //so await is used to wait untill the response is received
+                     //response is stored in the variable flowers
+                     //inside fetching we used .catch: to make our code prepared for any error happened while fetching the data
+                     let flowers=await fetch('/api/flowers')
+                                        .then(response=>{
+                                                         return response.json();                                            
+                                                         })
+                                        .catch(err=>{
+                                                      console.log("Something has gone Wrong !!!");
+                                                    });
+                    //response data is diplayed 
+                    console.log(flowers); //displaying the total flowers JSON Array at console
+                 }
+                 catch(err){
+                     alert(err);
+                 };
+             };            
+            
+            getResponseFromServer();  //calling the function 
+            </script>
+    </body>
+</html>
