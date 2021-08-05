@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>ASYNC AWAIT PROMISE --</title>
+        </head>
+        <body>
+
+        <h2> ASYNC -- AWAIT -- PROMISE </h2>
+            <script>
+
+                //asynchronous means: Generate Result value after certain time interval 
+                //promise: it is the assurance that  we will get the result not right now but after provided time interval
+                async function startWorking(){ //to make tghis function async function we have used async keyword
+                    console.log("*** Startworking code is getting started its execution ****");
+                    //promise will be generated due to the promise object
+                 //to create the promise object:
+                 let promise= new Promise((resolve,reject)=>{
+
+                     console.log("*** Task is in process, data is generated, response is about to be sent ****");
+                     
+                     
+                     
+                     //this promise will be resolved after some time interval:
+                     //setting the time interval:
+                     //to create simulation that something will be responsed only after few seconds
+                     setTimeout(() => {
+                         
+                         console.log("*** task Is completed :) ****");
+                         
+                     }, 5000); //promise will get the value after 5 seconds
+                     //what value? => "tast is completed"
+                 })                
+
+                 //Promise(): a call back function to initialize the promise.
+                 //this callback consistes of two arguments: resolve callback,reject callback.
+
+                console.log("*** startworking code is about to get promise ****");
+                //declaring the result: and this result get awailable after certain time out
+                 
+                let result= await promise; //wait until promise arrives
+
+                console.log(" * Here displaying the Value received * ");
+
+                console.log(result); //printing the result after tyhe time interval
+                };
+
+                console.log("**** Main Java script Execution is Started ****")
+                //invoking the Asynchronous Function:
+                startWorking();
+
+                console.log("**** Main Java script Execution is finished ****");
+
+            </script>
+        </body>
+
+</html>
