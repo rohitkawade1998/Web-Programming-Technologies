@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+          <h2>Asynchronous Function</h2><br/>
+          <h3>Cascading Effect</h3>
+        <h3>ES6 Javascript Syntax</h3>
+        <h5>to see output open browser console </h5>
+        <script>
+
+        function onComplete() {
+
+            console.log("Executing certain logic after receiving response from another function");
+            console.log("refreshing screen with latestinformation received from response");           
+        }
+
+            //to apply cascading effect we need to attach a keyword async
+         async function startworking() {  //asynchronous function
+             //suppose it takes 5 hrs to process the foll logic
+
+            console.log("Precessing request");
+            console.log("Searching data from back end");
+            console.log("Filtering data based on Business rule");
+            console.log("Return response of the core logic back to caller");
+            return "work is complete :)"
+         
+        };
+
+        console.log("***** Start of Code Segment ******");
+        /*
+
+        //blocking call
+        startworking();  //until finish it will block the execution for next function/statements
+
+        onComplete();  //direct calling
+
+
+        */
+
+
+            //asynchronous call
+        startworking().then(onComplete);  //registering callback function
+
+        //this statement gets executed before the onComplete(),
+        console.log("***** i will come in between....see i came :) ******");
+
+        //so onComplete() is working as a background process running and whenever complete the shows result
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
