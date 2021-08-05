@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+          <h2>Asynchronous Programming</h2>
+          <h3>For Home Loan Scenario</h3><br/>
+        <h4>ES6 Javascript Syntax</h4>
+        <h5>to see output open browser console </h5>
+        <script>
+
+            async function processHomeLoan(){
+                console.log("Verifying the Load Application");
+                console.log("Check BAmk statement of three years of applicant");
+                console.log("Get it approved from the senior");
+
+                return "Your Home loan is Approved";
+            };
+
+            function prepForContruction(){
+
+                console.log("Get the Blue print Approved");
+                console.log("check for material rates and labours to work");
+                console.log("fix wages of labours");
+
+            };
+
+            function startContruction(){
+
+                console.log("start the work");
+                console.log("check daily work");
+              };
+            
+            // after processHomeLoan function completes , these two functions will be executed in backgroung and will display result as execution completes
+            processHomeLoan().then(prepForContruction)
+                             .then(startContruction); //chaining multiple function with one function
+
+            console.log("--Normal day to Day Activities are going on")
+
+        </script>
+    </body>
+</html>
