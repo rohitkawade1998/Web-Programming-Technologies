@@ -1,0 +1,52 @@
+<!-- writinga html file , 
+and when this file will be invoked then display a JSON file
+consisting some json objects , without using JQUERY-->
+
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>FETCH SERVER DATA  --</title>
+        </head>
+        <body>
+
+        <h3> FETCHING data from servr and displaying on the browser Console </h3>
+           
+            <script>
+            //Reactive Programming: 
+   
+             
+             
+             //declaring function:
+             async function getResponseFromGit(){
+                 
+                 
+                 try{
+                     var url="https://api.github.com/users/rohitkawade1998";
+                     
+                     let gitinfo=await fetch(url)
+                                        .then(response=>{
+                                                         return response.json();                                            
+                                                         })
+                                        .catch(err=>{
+                                                      console.log("Something has gone Wrong !!!");
+                                                    });
+                    //response data is diplayed 
+
+                    //displaying total information :
+                    //console.log(gitinfo); //displaying the total git data at console
+                    
+                    //displaying only particular data:
+                    console.log(gitinfo.name);
+                    console.log(gitinfo.login);
+                    console.log(gitinfo.company);
+                     console.log(gitinfo.location);
+                 }
+                 catch(err){
+                     alert(err);
+                 };
+             };      
+            
+            getResponseFromGit();  //calling the function 
+            </script>
+    </body>
+</html>
