@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Json Objects</title>
+    </head>
+    <body>
+          <h3>INHERITANCE</h3>
+        <h3>ES6 Javascript Syntax</h3>
+        <h5>to see output open browser console </h5>
+        <script>
+        // Why do we learn object oriented concepts here ?
+        // SImplicity
+        // Easy to maintain
+        // confort of object oriented developer
+        //less learning curve   
+        //javascript only supports: Inheritance, Polymorphism, Encapsulation, Abstraction
+        class Animal{
+
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+
+            sing(){
+                return `displaying name: ${this.name} can Sing --from Animal class`;
+            };
+
+            dance(){
+                return `displaying name: ${this.name} can Dance --from Animal class`;
+            };
+
+        };
+
+        //Is-A Relationship : INHERITANCE
+        class Cat extends Animal{
+            constructor(name,age,color){
+                //initialize the superclass variables using super keyword
+                super(name,age);
+
+                //initialising the color variable of this class
+                this.color=color;
+            }
+
+            catwalk(){
+                return `i am ${this.name}, and i can catwalk`;
+
+            };
+
+            //FUNCTION OVERRIDING:
+            /* //testing what happens if same name function is there in super and derived classes:
+             dance(){
+                return `cat name: ${this.name} can Dance --from Cat class`;
+             };   
+            */
+        };
+
+        //Testing Inheritance : by creating the objects 
+
+        let cat1=new Cat("Sharukh",3,"White");
+        
+        console.log(cat1);//printing the whole object
+
+        console.log(cat1.catwalk()); //invoking member function of Cat class by object same class
+
+         console.log(cat1.sing()); //invoking member function of Animal class by object of its derived class
+
+          console.log(cat1.dance()); //POLYMORPHISM
+          //if function to be invoked is present in the same class then it will be invoked,
+          //else if super class consists a function with same name, then that will be invoked.
+
+
+          //Reflection: getting the meta data of the instance associated with that class at run time
+          if(cat1 instanceof Animal)
+          {
+              console.log("Yes,cat1 is an instance of Animal Class");
+          }
+          else{
+          console.log("No,cat1 is Not an instance of Animal Class");
+          };
+
+       /*
+        why do we use object oriented,are there any limitations here in javascript?
+        => we use OOPs to write Business Application,
+        => Being as a software developer we design two types of applications: System s/w and Application s/w
+        => (1) Systm s/w: OS, device Drivers, Machine Level Interfacing (C-language,Embedded c,Machine level programming) 
+        => it needs code should be compiled with less CPU and less Memory(Procedural Programming)
+        
+        
+        => (2) Application s/w: Business Application (OOPs is used here) bcaz B`App are complex and vast.
+        => this programming requires more CPU Cycles and more space for exection smoothely
+
+
+       */
+       </script>
+    </body>
+</html>
+
+
+
