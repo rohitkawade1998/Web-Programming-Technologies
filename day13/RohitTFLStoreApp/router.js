@@ -21,13 +21,13 @@ module.exports=function(app){
 
     //Flowers HTTP request Mapping using inbuilt keyword: 'route',
     app.route("/api/flowers")              
-    .get(flowercontroller.getAll)           //http://localhost:9898/api/flowers/       GET  
-    .post(flowercontroller.insert);         //http://localhost:9898/api/flowers/       POST
+    .get(flowerController.getAll)           //http://localhost:9898/api/flowers/       GET  
+    .post(flowerController.insert);         //http://localhost:9898/api/flowers/       POST
 
     app.route('/api/flowers/:id')
-    .get(flowercontroller.getBy)           //http://localhost:9898/api/flowers/:id     GET
-    .put(flowercontroller.update)          //http://localhost:9898/api/flowers/:id     PUT
-    .delete(flowercontroller.remove);      //http://localhost:9898/api/flowers/:id     DELETE    
+    .get(flowerController.getBy)           //http://localhost:9898/api/flowers/:id     GET
+    .put(flowerController.update)          //http://localhost:9898/api/flowers/:id     PUT
+    .delete(flowerController.remove);      //http://localhost:9898/api/flowers/:id     DELETE    
 
 
 };
