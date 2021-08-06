@@ -17,7 +17,6 @@ var Flower = function(Flower){
     this.description = Flower.description;
     this.unitprice = Flower.unitprice;
     this.quantity = Flower.quantity;
-    this.imageurl = Flower.imageurl;
     this.likes = Flower.likes;
 
 };
