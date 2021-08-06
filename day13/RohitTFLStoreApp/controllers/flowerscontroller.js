@@ -19,20 +19,14 @@ exports.insert = function(req, res) {
   console.log(new_Flower.body);
 
   //handles null error , these elements are declared as not null at data base, so we need to verify them here
-   if(!new_Flower.title || !new_Flower.unitprice){
-      res.status(400).send({ error:true, message: 'Please provide Flower name/unit price !!' });
-    }
-   else{
-       console.log("calling controller function for insert request...");
-    Flower.createFlower(new_Flower, function(err, flower) {
-     if (err)
-      {
-        res.send(err);
-      }else{
-             res.json(flower);
-        };
+  
+         console.log("calling controller function for insert request...");
+          Flower.createFlower(new_Flower, function(err, flower) {
+           if (err)
+            res.send(err);             
+            res.json(flower);
+               
     });
-  }
 };
 
 exports.getBy = function(req, res) {
