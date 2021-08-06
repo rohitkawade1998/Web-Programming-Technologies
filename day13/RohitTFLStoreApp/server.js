@@ -20,6 +20,10 @@ app.get("/",function(req,res){
     res.sendFile("index.html");
 });
 
+//Router configuration
+var routes=require("./router");
+routes(app);            // going invoke module Router from router.js
+
 //listen Mode
 app.listen(9898);
 console.log("Rohit: Express TFLSTORE APP i listening on Port Number: 9800");
