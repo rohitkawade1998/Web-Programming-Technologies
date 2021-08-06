@@ -3,21 +3,22 @@
 //Flowers database CRUD operation
 
 //importing the mysqlconnect module here
-var sql=require('./mysqlconnect');
+var sql = require('./mysqlconnect');
 
 //model
 //object oriented approach
 //define Model
 
 //creating a Flower function :
-var Flower=function(Flower){
+var Flower = function(Flower){
     //constructor:
-    this.Id=Flower.Id;
-    this.Title=Flower.Title;
-    this.Description=Flower.Description;
-    this.UnitPrice=Flower.UnitPrice;
-    this.Quantity=Flower.Quantity;
-    this.ImageUrl=Flower.ImageUrl;
+    this.id = Flower.id;
+    this.title = Flower.title;
+    this.description = Flower.description;
+    this.unitprice = Flower.unitprice;
+    this.quantity = Flower.quantity;
+    this.imageurl = Flower.imageurl;
+    this.likes = Flower.likes;
 
 };
 
@@ -25,21 +26,18 @@ var Flower=function(Flower){
 //Attach member function Model to perform Database CRUD operations:
 //here result is the call back function
 //newFlower is the Json object passed from the calling function
-Flower.createFlower = function(newFlower,result){
+Flower.createFlower = function (newFlower, result) {
     console.log("New flower adding process started...");
-    //console.log(newFlower);
-
-    let queryy="insert into flowers values(" +newFlower.id+",'"+newFlower.title+"','"+newFlower.description+"','"+newFlower.unitprice+"',"+newFlower.imageurl+"','"+newFlower.quantity+"','"+newFlower.likes+")";
-    sql.query(querry,function(err,res){
-        if(err){
+    console.log(newFlower);
+    
+     sql.query("INSERT INTO flowers SET ?", newFlower,function(err,res){
+        if (err) {
             console.log("error: "+err);
             result(err,null);
+        } else {
+                  console.log("new flower inserted  :) ");
+                  result(null,res.id);
         }
-        else{
-                  console.log(res.insertId);
-                  result(null,res.insertId);
-        }
-
     });
 };
 
@@ -48,8 +46,7 @@ Flower.createFlower = function(newFlower,result){
 Flower.getAllFlower=function(result){
     console.log("Displaying all flowers data, process started...");
 
-         let queryy="select * from flowers";
-    sql.query(queryy,function(err,res){
+    sql.query("select * from flowers",function(err,res){
 
         if(err){
             console.log("error: "+err);
@@ -65,11 +62,11 @@ Flower.getAllFlower=function(result){
 };
 
 //function to Get flower details by id:
-Flower.getFlowerById()=function(FlowerId,result){
-    console.log("Get flower by ID, process started...");
+Flower.getFlowerById=function(FlowerId,result){
+    console.log("Get flower by id, process started...");
 
-     let queryy="select * from flowers where id ="+FlowerId;
-    sql.query(queryy,function(err,res){
+     
+     sql.query("Select * from flowers where id = ? ", FlowerId,function(err,res){
                  if(err) {
                     console.log("error: ", err);
                     result(err, null);
@@ -86,8 +83,7 @@ Flower.getFlowerById()=function(FlowerId,result){
 Flower.updateById = function(id,Flower,result){
     console.log("Updating a flower data, process started...");
 
-     let queryy="update flowers set title = "+Flower.title+" where Id = "+id;
-    sql.query(queryy,function(err,res){
+       sql.query("UPDATE flowers SET title = ? WHERE id = ?", [Flower.title, id],function(err,res){
 
         if(err){
             console.log("error: "+err);
@@ -107,14 +103,14 @@ Flower.remove = function(id, result){
 
     console.log("Deleting a flower data, process started...");
 
-     let queryy="delete from flowers where id = "+id;
-    sql.query(queryy,function (err, res){
+     sql.query("DELETE FROM flowers WHERE id = ?", [id],function (err, res){
 
                      if(err) {
                        console.log("error: ", err);
                        result(null, err);
                      }
                      else{
+                         console.log("Deleted flower with id "+id);
                        result(null, res);
                      }
             }); 
