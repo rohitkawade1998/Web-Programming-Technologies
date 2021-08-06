@@ -23,8 +23,13 @@ exports.insert = function(req, res) {
          console.log("calling controller function for insert request...");
           Flower.createFlower(new_Flower, function(err, flower) {
            if (err)
-            res.send(err);             
+           {
+            res.send(err); 
+           }else{
+
             res.json(flower);
+            res.json({ message: 'Flower successfully added' });
+           }
                
     });
 };
@@ -47,7 +52,7 @@ exports.update = function(req, res) {
     {
       res.send(err);
     }else{
-    res.json(flower);
+    res.json({ message: 'Flower successfully updated' });
     };
   });
 };
