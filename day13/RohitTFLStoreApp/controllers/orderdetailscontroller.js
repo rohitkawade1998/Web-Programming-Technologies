@@ -1,17 +1,17 @@
 //a Separate responsibility  for  Flowers  HTTP request handling
 
-var Order = require("../dal/ordersdal");
+var Orderdetails = require("../dal/orderdetailsdal");
 
 exports.getAll = function (req, res) {
-  console.log("calling controller function");
-  Order.getAllOrder(function (err, order) {
+  console.log("calling order details controller function");
+  Orderdetails.getAllOrderdetails(function (err, order) {
     if (err) res.send(err);
     res.send(order);
   });
 };
 
 exports.insert = function (req, res) {
-  var new_order = new Order(req.body);
+  var new_order = new Orderdetails(req.body);
   console.log(new_order);
 
   //handles null error
@@ -20,7 +20,7 @@ exports.insert = function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide customer id" });
   } else {
-    Order.createOrder(new_order, function (err, order) {
+     Orderdetails.createOrderdetails(new_order, function (err, order) {
       if (err) res.send(err);
       res.json(order);
     });
@@ -28,21 +28,21 @@ exports.insert = function (req, res) {
 };
 
 exports.getBy = function (req, res) {
-  Order.getOrderById(req.params.id, function (err, order) {
+  Orderdetails.getOrderdetailsById(req.params.id, function (err, order) {
     if (err) res.send(err);
     res.json(order);
   });
 };
 
 exports.update = function (req, res) {
-  Order.updateById(req.params.id, new Order(req.body), function (err, order) {
+  Orderdetails.updatedetailsById(req.params.id, new Order(req.body), function (err, order) {
     if (err) res.send(err);
     res.json(order);
   });
 };
 
 exports.remove = function (req, res) {
-  Order.remove(req.params.id, function (err, order) {
+  Orderdetails.removedetails(req.params.id, function (err, order) {
     if (err) res.send(err);
     res.json({ message: "Flower successfully deleted" });
   });
