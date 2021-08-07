@@ -12,8 +12,8 @@
 var flowerController=require("./controllers/flowerscontroller");
 var customerController = require("./controllers/customersController");
 var orderController = require("./controllers/ordersController");
-var orderItemController = require("./controllers/ordersItemController");
-var productController = require("./controllers/productscontroller");
+var orderdetailsController = require("./controllers/orderdetailscontroller");
+
 
 //get the app object of express from server.js
 
@@ -60,26 +60,15 @@ module.exports=function(app){
 
   //OrderITEM HTTP request Mapping
   app
-    .route("/api/orderitems")
-    .get(orderItemController.getAll)
-    .post(orderItemController.insert);
+    .route("/api/orderdetails")
+    .get(orderdetailsController.getAll)
+    .post(orderdetailsController.insert);
 
   app
-    .route("/api/orderitems/:id")
-    .get(orderItemController.getBy)
-    .delete(orderItemController.remove);
-
-  //prodct HTTP request Mapping
-  app
-    .route("/api/products")
-    .get(productController.getAll)
-    .post(productController.insert);
-
-  app
-    .route("/api/products/:id")
-    .get(productController.getBy)
-    .delete(productController.remove);
-
+    .route("/api/orderdetails/:id")
+    .get(orderdetailsController.getBy)
+    .put(orderdetailsController.update)
+    .delete(orderdetailsController.remove);
 
 };
 
