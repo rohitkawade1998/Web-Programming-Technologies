@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Advance TFLStore</title>
+     </head>
+
+     <body>
+
+         <h1> Add Flowers </h1>
+         <hr/>
+         <br/>
+                 <a href="/index.html">Home</a> | <a href="/flowers.html">Flowers </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a> | <a href="/yourorders.html">Your Orders</a> 
+
+         <br/>
+         <br/>
+  
+         <form action="/api/flowers" method="POST" >
+
+         
+                
+                 <table>
+                     <tr>
+                         <td>id: </td>
+                         <td><input id="neworderid" name="orderid" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>Order date: </td>
+                         <td><input id="orderdate" name="orderdate" type="date" required/></td>
+                     </tr>
+
+                     <tr>
+                         <td>Amount: </td>
+                         <td><input id="orderamount" name="amount" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>Customer Id: </td>
+                         <td><input id="customerid" name="customerid" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td></td>
+                         <td><button id="addorder" type="submit" required >Add Order</button></td>
+                     </tr>
+
+                 </table>
+         </form>
+    </body> 
+</html>

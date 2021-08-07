@@ -1,13 +1,13 @@
 var sql = require("./mysqlconnect");
 
 var Order = function (Order) {
-  this.customer_id = Order.customer_id;
-  this.order_date = Order.order_date;
-  this.status = Order.status;
-  this.comments = Order.comments;
-  this.shipped_date = Order.shipped_date;
-  this.shipper_id = Order.shipper_id;
+  this.customerid = Order.customerid;
+  this.orderdate = Order.orderdate;
+  this.amount = Order.amount;
+  this.orderid = Order.orderid;
+ 
 };
+
 Order.createOrder = function (newOrder, result) {
   console.log("New Order to be added ");
   console.log(newOrder);
@@ -16,16 +16,19 @@ Order.createOrder = function (newOrder, result) {
       console.log("error: ", err);
       result(err, null);
     } else {
-      console.log(res.insertId);
-      result(null, res.insertId);
+      
+      console.log(res.insertid);
+    
+      result(null, res.insertid);
+      console.log("new order inserted  :) ");
     }
   });
 };
 
 Order.getOrderById = function (OrderId, result) {
   sql.query(
-    "Select * from Orders where order_id = ? ",
-    OrderId,
+    "Select * from Orders where orderid = ? ",
+    orderid,
     function (err, res) {
       if (err) {
         console.log("error: ", err);
@@ -51,31 +54,31 @@ Order.getAllOrder = function (result) {
   });
 };
 
-Order.updateById = function (id, Order, result) {
+Order.updateById = function (orderid, Order, result) {
   sql.query(
-    "UPDATE customers SET customer_id = ?,order_date = ?, status = ?, shipped_date = ?, shipper_id = ? WHERE order_id = ?",
+    "UPDATE orders SET customerid = ?, orderdate = ?, amount = ? WHERE orderid = ?",
     [
-      Order.customer_id,
-      Order.order_date,
-      Order.status,
-      Order.comments,
-      Order.shipped_date,
-      Order.shipper_id,
-      id,
+
+      Order.customerid,
+      Order.orderdate,
+      Order.amount,
+      Order.orderid
+      
     ],
     function (err, res) {
       if (err) {
         console.log("error: ", err);
         result(null, err);
       } else {
+        console.log("flower details Updated :) ");
         result(null, res);
       }
     }
   );
 };
 
-Order.remove = function (id, result) {
-  sql.query("DELETE FROM orders WHERE order_id = ?", id, function (err, res) {
+Order.remove = function (orderid, result) {
+  sql.query("DELETE FROM orders WHERE orderid = ?", orderid, function (err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);

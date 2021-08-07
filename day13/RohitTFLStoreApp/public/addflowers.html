@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Advance TFLStore</title>
+     </head>
+
+     <body>
+
+         <h1> Add orders </h1>
+         <hr/>
+         <br/>
+                 <a href="/index.html">Home</a> | <a href="/flowers.html">Flowers </a> | <a href="/login.html">Login </a> | <a href="/register.html">Register </a> | <a href="/yourorders.html">Your Orders</a> 
+
+         <br/>
+         <br/>
+  
+         <form action="/api/orders" method="POST" >
+
+         
+                
+                 <table>
+                     <tr>
+                         <td>id: </td>
+                         <td><input id="newid" name="id" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>First Name: </td>
+                         <td><input id="title" name="title" type="text" required/></td>
+                     </tr>
+
+                     <tr>
+                         <td>Description: </td>
+                         <td><input id="description" name="description" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>Unitprice: </td>
+                         <td><input id="unitprice" name="unitprice" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>Quantity: </td>
+                         <td><input id="quantity" name="quantity" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td>Likes: </td>
+                         <td><input id="likes" name="likes" type="text" required /></td>
+                     </tr>
+
+                     <tr>
+                         <td></td>
+                         <td><button id="register" type="submit" required >Add Flower</button></td>
+                     </tr>
+
+                 </table>
+         </form>
+    </body> 
+</html>

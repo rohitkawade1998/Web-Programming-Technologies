@@ -1,13 +1,18 @@
+//all the logic of firing the query will be written in this code
+
+//Customers database CRUD operation
+
+//importing the mysqlconnect module here
+
 var sql = require("./mysqlconnect");
 
 var Customer = function (Customer) {
-  this.first_name = Customer.first_name;
-  this.last_name = Customer.last_name;
-  this.birth_date = Customer.birth_date;
-  this.address = Customer.address;
-  this.city = Customer.city;
-  this.state = Customer.state;
-  this.points = Customer.points;
+  this.custid = Flower.custid;
+  this.firstname = Customer.firstname;
+  this.lastname = Customer.lastname;
+  this.email= Customer.email;
+  this.contactnumber = Customer.contactnumber;  
+  
 };
 Customer.createCustomer = function (newCustomer, result) {
   console.log("New Customer to be added ");
@@ -23,10 +28,10 @@ Customer.createCustomer = function (newCustomer, result) {
   });
 };
 
-Customer.getCustomerById = function (CustomerId, result) {
+Customer.getCustomerById = function (custid, result) {
   sql.query(
-    "SELECT * FROM customers WHERE customer_id = ? ",
-    CustomerId,
+    "SELECT * FROM customers WHERE custid = ? ",
+    custid,
     function (err, res) {
       if (err) {
         console.log("error: ", err);
@@ -52,18 +57,15 @@ Customer.getAllCustomer = function (result) {
   });
 };
 
-Customer.updateById = function (id, Customer, result) {
+Customer.updateById = function (custid, Customer, result) {
   sql.query(
-    "UPDATE customers SET first_name = ?,last_name = ?, birth_date = ?, address = ?,city = ?, state = ?, points = ?  WHERE customer_id = ?",
+    "UPDATE customers SET firstname = ?,lastname = ?, email = ?, contactnumber = ?  WHERE custid = ?",
     [
-      Customer.first_name,
-      Customer.last_name,
-      Customer.birth_date,
-      Customer.address,
-      Customer.city,
-      Customer.state,
-      Customer.points,
-      id,
+      Customer.firstname,
+      Customer.lastname,
+      Customer.email,
+      Customer.contactnumber,
+      custid,
     ],
     function (err, res) {
       if (err) {
@@ -76,10 +78,10 @@ Customer.updateById = function (id, Customer, result) {
   );
 };
 
-Customer.remove = function (id, result) {
+Customer.remove = function (custid, result) {
   sql.query(
-    "DELETE FROM customers WHERE customer_id = ?",
-    id,
+    "DELETE FROM customers WHERE custid = ?",
+    custid,
     function (err, res) {
       if (err) {
         console.log("error: ", err);
