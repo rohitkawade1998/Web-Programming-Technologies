@@ -16,8 +16,8 @@ Orderdetails.createOrderdetails = function (newOrderdetails, result) {
       console.log("error: ", err);
       result(err, null);
     } else {
-      console.log(res.insertId);
-      result(null, res.insertId);
+      console.log(res);
+      result(null, res);
     }
   });
 };
@@ -59,7 +59,7 @@ Orderdetails.updatedetailsById = function (id, Orderdetails, result) {
       Orderdetails.orderid,
       Orderdetails.flowerid,
       Orderdetails.quantity,
-      Orderdetails.orderdetailsid,
+      id
       
     ],
     function (err, res) {

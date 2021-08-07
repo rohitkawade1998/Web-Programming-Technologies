@@ -44,6 +44,6 @@ exports.update = function (req, res) {
 exports.remove = function (req, res) {
   Order.remove(req.params.id, function (err, order) {
     if (err) res.send(err);
-    res.json({ message: "Flower successfully deleted" });
+    res.json({ message: "Order successfully deleted with id "+req.params.id });
   });
 };

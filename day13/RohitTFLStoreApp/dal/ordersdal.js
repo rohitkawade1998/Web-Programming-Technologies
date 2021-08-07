@@ -19,13 +19,13 @@ Order.createOrder = function (newOrder, result) {
       
       console.log(res.insertid);
     
-      result(null, res.insertid);
+      result(null, res);
       console.log("new order inserted  :) ");
     }
   });
 };
 
-Order.getOrderById = function (OrderId, result) {
+Order.getOrderById = function (orderid, result) {
   sql.query(
     "Select * from Orders where orderid = ? ",
     orderid,
@@ -62,7 +62,7 @@ Order.updateById = function (orderid, Order, result) {
       Order.customerid,
       Order.orderdate,
       Order.amount,
-      Order.orderid
+      orderid
       
     ],
     function (err, res) {
