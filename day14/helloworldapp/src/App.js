@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './home';
+import About from './about';
+import Contact from './contact';
+import Product from './product';
 import Login from './login';
+import Register from './register';
 
 function App() {
   return (
@@ -15,12 +20,25 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
+         >
+          Learning React
         </a>
-      </header>
-      <Login></Login>  
+      </header> 
+
       <br/>
+      <Home></Home>
+      <br/>
+      <About></About>
+      <br/>
+      <Contact></Contact>
+      <br/>
+      <Product></Product>
+      <br/>
+      <Login></Login>
+      <br/>
+      <Register></Register>
+      <br/>
+
      
     </div> 
   );

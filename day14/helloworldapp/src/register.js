@@ -10,6 +10,7 @@ class Register extends React.Component{
 
             <div>
 
+            <h3>Register here: </h3>
              <form action="/api/register" method="POST" >
                 
                  <table>

@@ -14,22 +14,22 @@ class Product extends React.Component{
                 <p> Description : white colorfull wedding flower </p>
                 <p> Quantity available: 45000</p>
                 <br/>
-                <p>1) Marigold</p>
+                <p>2) Marigold</p>
                 <img src="/images/flowers/marigold.jpg" width="100" height="100" />
                 <p> Description : yellow Wedding flower </p>
                 <p> Quantity available: 3000</p>
                 <br/>
-                <p>1) Jasmine</p>
+                <p>3) Jasmine</p>
                 <img src="/images/flowers/jasmine.jpg" width="100" height="100" />
                 <p> Description : worship flower </p>
                 <p> Quantity available: 4900</p>
                 <br/>
-                <p>1) Lily</p>
+                <p>4) Lily</p>
                 <img src="/images/flowers/lily.jpg" width="100" height="100" />
                 <p> Description : delicate flower </p>
                 <p> Quantity available: 70000</p>
                 <br/>
-                <p>1) Rose</p>
+                <p>5) Rose</p>
                 <img src="/images/flowers/rose.jpg" width="100" height="100" />
                 <p> Description : valentine flower </p>
                 <p> Quantity available: 187000</p>
@@ -41,4 +41,4 @@ class Product extends React.Component{
     }
 }
 
-export default Register;
+export default Product;

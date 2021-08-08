@@ -1,6 +1,6 @@
 import React from 'react';
 
-class About extends React.component{
+class About extends React.Component{
     //class definition
     render(){
         return(

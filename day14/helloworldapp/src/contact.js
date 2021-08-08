@@ -5,6 +5,7 @@ class Contact extends React.Component{
         return(
             <div>
                <p>Welcome to the Contact page</p>
+               <hr/>
             </div>
         );
     }
