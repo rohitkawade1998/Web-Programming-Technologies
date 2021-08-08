@@ -19,18 +19,9 @@ function App() {
       </header> 
 
       <br/>
-      <Home></Home>
+      <Homee></Homee>
       <br/>
-      <About></About>
-      <br/>
-      <Contact></Contact>
-      <br/>
-      <Product></Product>
-      <br/>
-      <Login></Login>
-      <br/>
-      <Register></Register>
-      <br/>
+      
 
      
     </div> 
@@ -38,17 +29,35 @@ function App() {
 }
 
 
-/*
+
 //function component
-function Hello(){
+function Homee(){
   return(
     <div>
-    <h2> New hello component </h2>
-    <h3> Welcome to Child component</h3>
+       <div class="jumbotron">
+          <h1>Welcome to Transflower</h1>
+          <p>Mentoring as A service</p>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+            <h1>Mentoring</h1>
+            <p>YA YA YA</p>
+            </div>
+            <div class="col-sm-4">
+            <h1>Consulting</h1>
+            <p>YO YO YO</p>
+            </div>
+            <div class="col-sm-4">
+            <h1>Learning</h1>
+            <p>Yes Yes Yes</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   );
 }
-*/
+
 
 export default App;
