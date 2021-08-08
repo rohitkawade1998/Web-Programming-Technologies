@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './login';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="/images/rohit.jpg" className="App-logo" alt="logo" /> 
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to my Website Guys
         </p>
         <a
           className="App-link"
@@ -18,8 +19,25 @@ function App() {
           Learn React
         </a>
       </header>
+      <Login></Login>  
+      <br/>
+     
+    </div> 
+  );
+}
+
+
+/*
+//function component
+function Hello(){
+  return(
+    <div>
+    <h2> New hello component </h2>
+    <h3> Welcome to Child component</h3>
+
     </div>
   );
 }
+*/
 
 export default App;
