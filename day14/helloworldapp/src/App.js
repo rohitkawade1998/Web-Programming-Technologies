@@ -15,14 +15,7 @@ function App() {
         <p>
           Welcome to my Website Guys
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-         >
-          Learning React
-        </a>
+        
       </header> 
 
       <br/>
